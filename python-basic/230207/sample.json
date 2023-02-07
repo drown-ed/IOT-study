@@ -1,0 +1,10 @@
+{
+    "name" : "Peter Parker",
+    "age" : 20,
+    "adult" : true,
+    "hero_name" : "Spider-Man",
+    "weapon" : "Web Shooter",
+    "dayOfWeek" : [{"Mon" : 0 },
+                   {"Tue" : 1 },
+                   {"Wen" : 2 }, "Thu", "Fri", "Sat", "Sun"]
+}
