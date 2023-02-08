@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <title>도시별관측 - 기상청 날씨누리</title>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes">
+      <meta name="format-detection" content="telephone=no">
+      <link rel="shortcut icon" href="/w/iphone-shortcut.png" />
+       <link rel="apple-touch-icon-precomposed" href="/w/iphone-shortcut.png" />
+      <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta property="og:image" content="https://www.weather.go.kr/w/iphone-shortcut.png">
+      <link href="/w/resources/css-2021/slick.css?ver=2023020201" rel="stylesheet" type="text/css">
+      <link href="/w/resources/css-2021/basic.css?ver=2023020201" rel="stylesheet" type="text/css">
+      <link href="/w/resources/css-2021/common-ui.css?ver=2023020201" rel="stylesheet" type="text/css">
+      <link href="/w/resources/css-2021/common-ui-mobile.css?ver=2023020201" rel="stylesheet" type="text/css">
+      <link href="/w/resources/css-2021/custom.css?ver=2023020201" rel="stylesheet" type="text/css">
+      <link href="/w/resources/css-2021/common-ui-new-mobile.css?ver=2023020201" rel="stylesheet" type="text/css">
+      <link href="/w/resources/css-2021/component.css?ver=2023020201" rel="stylesheet" type="text/css">
+      <link href="/w/resources/css-2021/print.css?ver=2023020201" rel="stylesheet" media="print" type="text/css" />
+      <link href="/w/resources/css-2021/ie.css?ver=2023020201" rel="stylesheet" type="text/css">
+      <script src="/w/resources/js/lodash.min.js"></script>
+      <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+      <script src="/w/resources/js/clipboard.min.js"></script>
+      <script src="/w/resources/js/moment-with-locales.js"></script>
+      <script src="/w/resources/js/moment-timezone.js"></script>
+      <script src="/w/resources/js/jquery-3.4.1.min.js"></script>
+      <script src="/w/resources/js/jquery-ui.min.js"></script>
+      <script src="/w/resources/js/iscroll-probe.js"></script>
+      <script src="/w/resources/js/slick.min.js"></script>
+      <script src="/w/resources/js/mustache.min.js"></script>
+      <script src="/w/resources/js/store.modern.min.js"></script>
+      <script src="/w/resources/js/object-assign.js"></script>
+      <script src="/w/resources/js/highcharts.js"></script>
+      <script src="/w/resources/js/fn.js?ver=2023020201"></script>
+      
+      <script> 
+         window.appBase = "\/w\/";
+         window.vmapBaseUrl = "https:\/\/vmap.kma.go.kr";
+         window.vmapBaseParam = "HIDEMENU=Y";
+         window.wgisBaseUrl = "https:\/\/www.weather.go.kr\/wgis-nuri";
+         var hashParam = null;
+      </script>
+   <link rel="stylesheet" href="https://www.weather.go.kr/wgis-nuri/css/ol.css?ver=2023020201" />
+<link rel="stylesheet" href="https://www.weather.go.kr/wgis-nuri/css/kmap.css?ver=2023020201" />
+
+
+
+<script src="/w/resources/lib/fetch.umd-3.6.1.min.js?ver=2023020201"></script>
+<script src="/w/resources/lib/promise-polyfill-8.min.js?ver=2023020201"></script>
+<script src="/w/resources/lib/babel-polyfill-7.12.1.min.js?ver=2023020201"></script>
+<script src="/w/resources/lib/abortcontroller-polyfill-1.7.1.min.js?ver=2023020201"></script>
+<script src="/w/resources/lib/vshrt-rain-fetch.js?ver=2023020201"></script>
+
+
+
+<script src="https://www.weather.go.kr/wgis-nuri/js/proj4/proj4.js?ver=2023020201"></script>
+
+
+ 
+<script src="/w/resources/lib/v6.5.0-dist/ol.bb.js?ver=2023020201"></script>
+<script src="/w/resources/js/kmap.bb.js?ver=2023020201"></script>
+<script src="https://www.weather.go.kr/wgis-nuri/js/common/windy.js?ver=2023020201"></script>
+<script src="/w/resources/lib/vue/vue.min.js?ver=2023020201"></script>
+
+<link rel="stylesheet" href="/w/resources/lib/kmap/legend.css?ver=2023020201" />
+<script src="/w/resources/lib/kmap/dfsLegends.js?ver=2023020201"></script>
+<script src="/w/resources/lib/kmap/legend.js?ver=2023020201"></script>
+<script src="/w/resources/lib/kmap/kmap_overlay.js?ver=2023020201"></script>
+   <link rel="stylesheet" href="/w/resources/lib/tablesorter/css/theme.blue.css" />
+   <script src="/w/resources/lib/tablesorter/js/jquery.tablesorter.min.js"></script>
+   <script src="/w/resources/lib/tablesorter/widgets/jquery.tablesorter.staticrow.min.js"></script>
+   </head>
+   <body class="subp">
+      <div class="skip_nav">
+         <a href="#wnuri-menu">메인메뉴 바로가기</a>
+         <a href="#container">본문 바로가기</a>
+      </div>
+      <div class="container">
+         
+
+   <header class="header">
+      <button class="close" title="메뉴 닫기"></button>
+      <div class="left-menu" id="lnb">
+         <div class="site-tit-wrap">
+            <h2 class="logo"><a href="/w/" class="btn-tit link">기상청 날씨누리</a></h2>
+         </div>
+         <div class="mobile-head">
+            <a href="/w/" class="home link">홈 바로가기</a>
+            <div class="head-set-wrap">
+               <div class="accordionsecond-wrap selectoption">
+                  <button class="accordionsecond-tit select-con set-btn" title="접힘">KOR</button>
+                  <div class="accordionsecond-con set-cont">
+                     <a class="select-btn link" data-role="link-to" href="https://www.kma.go.kr/eng/index.jsp" target="_blank">ENG</a>
+                     <a class="select-btn link" data-role="link-to" href="https://www.kma.go.kr/chn/index.jsp" target="_blank">CHN</a>
+                     <a class="select-btn link" data-role="link-to" href="https://www.kma.go.kr/jpn/index.jsp" target="_blank">JPN</a>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+         <div class="tab" data-role="global-left-tab">
+            <div class="tab-item on"><!-- <h1><a data-tab="1" href="#tab-weather" title="선택됨"><span>날씨누리</span></a></h1> -->
+               <nav class="wnuri-menu" id="wnuri-menu">
+                  <ul class="d1-wrap">
+                     
+                        <li class="d1-item01 accordionsecond-wrap">
+                           
+                              <a href="javascript:void(0);" class="d1-btn accordionsecond-tit" title="접힘">날씨 <i class="icon" aria-hidden="true"></i></a>
+                              <ul class="d2-wrap accordionsecond-con">
+                                 
+                                        
+                                       <li class="d2-item01 accordionsecond-wrap">
+                                          <a href="/w/weather/warning.do" class="d2-btn accordionsecond-tit"><span>기상특보<i class="icon" aria-hidden="true"></i></span></a>
+                                          <ul class="d3-wrap accordionsecond-con">
+                                             
+                                                <li class="d3-item01">
+                                                   
+                                                   <a href="/w/weather/warning/status.do" target="_self" class="d3-btn link">특보현황</a>
+                                                </li>
+                                             
+                                                <li class="d3-item02">
+                                                   
+                                                   <a href="/w/weather/warning/list.do" target="_self" class="d3-btn link">통보문</a>
+                                                </li>
+                                             
+                                                <li class="d3-item03">
+                                                   <a href="/w/weather/warning/impact/impact-stn.do" target="_self" class="d3-btn link">영향예보</a>
+                                                   
+                                                </li>
+                                             
+                                                <li class="d3-item04">
+                                                   <a href="/w/weather/warning/drought/drought-range1.do" target="_self" class="d3-btn link">가뭄예보</a>
+                                                   
+                                                </li>
+                                             
+                                                <li class="d3-item05">
+                                                   
+                                                   <a href="/w/weather/warning/fog.do" target="_self" class="d3-btn link">안개정보</a>
+                                                </li>
+                                             
+                                                <li class="d3-item06">
+                                                   
+                                                   <a href="/w/weather/warning/standard.do" target="_self" class="d3-btn link">기상특보 발표기준</a>
+                                                </li>
+                                             
+                                                <li class="d3-item07">
+                                                   <a href="/w/weather/warning/safetyguide/heavy-rain.do" target="_self" class="d3-btn link">국민행동요령</a>
+                                                   
+                                                </li>
+                                             
+                                                <li class="d3-item08">
+                                                   
+                                                   <a href="/w/weather/warning/dashboard.do" target="_self" class="d3-btn link">날씨상황판</a>
+                                                </li>
+                                             
+                                          </ul>
+                                       </li>
+                                    
+                                       
+                                 
+                                        
+                                       <li class="d2-item02 accordionsecond-wrap">
+                                          <a href="/w/weather/forecast.do" class="d2-btn accordionsecond-tit"><span>예보<i class="icon" aria-hidden="true"></i></span></a>
+                                          <ul class="d3-wrap accordionsecond-con">
+                                             
+                                                <li class="d3-item01">
+                                                   
+                                                   <a href="/w/weather/forecast/short-term.do" target="_self" class="d3-btn link">단기예보</a>
+                                                </li>
+                                             
+                                                <li class="d3-item02">
+                                                   
+                                                   <a href="/w/weather/forecast/mid-term.do" target="_self" class="d3-btn link">중기예보</a>
+                                                </li>
+                                             
+                                                <li class="d3-item03">
+                                                   <a href="/w/weather/forecast/nk-weather/nk-land-forecast.do" target="_self" class="d3-btn link">북한날씨</a>
+                                                   
+                                                </li>
+                                             
+                                          </ul>
+                                       </li>
+                                    
+                                       
+                                 
+                                        
+                                       <li class="d2-item03 accordionsecond-wrap">
+                                          <a href="/w/weather/long-term.do" class="d2-btn accordionsecond-tit"><span>장기전망<i class="icon" aria-hidden="true"></i></span></a>
+                                          <ul class="d3-wrap accordionsecond-con">
+                                             
+                                                <li class="d3-item01">
+                                                   
+                                                   <a href="/w/weather/long-term/month1.do" target="_self" class="d3-btn link">1개월 전망</a>
+                                                </li>
+                                             
+                                                <li class="d3-item02">
+                                                   
+                                                   <a href="/w/weather/long-term/month3.do" target="_self" class="d3-btn link">3개월 전망</a>
+                                                </li>
+                                             
+                                                <li class="d3-item03">
+                                                   
+                                                   <a href="/w/weather/long-term/month3-guide.do" target="_self" class="d3-btn link">3개월 전망 해설서</a>
+                                                </li>
+                                             
+                                                <li class="d3-item04">
+                                                   
+                                                   <a href="/w/weather/long-term/climate-monitoring.do" target="_self" class="d3-btn link">기후감시요소</a>
+                                                </li>
+                                             
+                                                <li class="d3-item05">
+                                                   
+                                                   <a href="/w/weather/long-term/climate-predict.do" target="_self" class="d3-btn link">기후예측모델</a>
+                                                </li>
+                                             
+                                                <li class="d3-item06">
+                                                   
+                                                   <a href="/w/weather/long-term/season.do" target="_self" class="d3-btn link">기후전망</a>
+                                                </li>
+                                             
+                                                <li class="d3-item07">
+                                                   
+                                                   <a href="/w/weather/long-term/el-la.do" target="_self" class="d3-btn link">엘니뇨라니냐 전망</a>
+                                                </li>
+                                             
+                                                <li class="d3-item08">
+                                                   <a href="http://www.climate.go.kr/" target="_blank" class="d3-btn link">기후정보포털</a>
+                                                   
+                                                </li>
+                                             
+                                          </ul>
+                                       </li>
+                                    
+                                       
+                                 
+                                    
+                                    
+                                       <li class="d2-item04">
+                                          
+                                          <a href="/w/weather/commentary.do" target="_self" class="d2-btn link"><span>날씨해설<i class="icon" aria-hidden="true"></i></span></a>
+                                       </li>
+                                       
+                                 
+                              </ul>
+                                 
+                           
+                        </li>
+                     
+                        <li class="d1-item02 accordionsecond-wrap">
+                           
+                              <a href="javascript:void(0);" class="d1-btn accordionsecond-tit" title="접힘">바다 <i class="icon" aria-hidden="true"></i></a>
+                              <ul class="d2-wrap accordionsecond-con">
+                                 
+                                    
+                                    
+                                       <li class="d2-item01">
+                                          
+                                          <a href="/w/ocean/warning.do" target="_self" class="d2-btn link"><span>해상특보<i class="icon" aria-hidden="true"></i></span></a>
+                                       </li>
+                                       
+                                 
+                                        
+                                       <li class="d2-item02 accordionsecond-wrap">
+                                          <a href="/w/ocean/forecast.do" class="d2-btn accordionsecond-tit"><span>바다예보<i class="icon" aria-hidden="true"></i></span></a>
+                                          <ul class="d3-wrap accordionsecond-con">
+                                             
+                                                <li class="d3-item01">
+                                                   
+                                                   <a href="/w/ocean/forecast/daily-forecast.do" target="_self" class="d3-btn link">일일예보</a>
+                                                </li>
+                                             
+                                                <li class="d3-item02">
+                                                   
+                                                   <a href="/w/ocean/forecast/mid-term-forecast.do" target="_self" class="d3-btn link">중기예보</a>
+                                                </li>
+                                             
+                                          </ul>
+                                       </li>
+                                    
+                                       
+                                 
+                                        
+                                       <li class="d2-item03 accordionsecond-wrap">
+                                          <a href="/w/ocean/prediction.do" class="d2-btn accordionsecond-tit"><span>바다예측<i class="icon" aria-hidden="true"></i></span></a>
+                                          <ul class="d3-wrap accordionsecond-con">
+                                             
+                                                <li class="d3-item01">
+                                                   
+                                                   <a href="/w/ocean/prediction/nwp.do" target="_self" class="d3-btn link">바다실황·예측</a>
+                                                </li>
+                                             
+                                                <li class="d3-item02">
+                                                   
+                                                   <a href="/w/ocean/prediction/zone.do" target="_self" class="d3-btn link">해구별예측</a>
+                                                </li>
+                                             
+                                          </ul>
+                                       </li>
+                                    
+                                       
+                                 
+                                        
+                                       <li class="d2-item04 accordionsecond-wrap">
+                                          <a href="/w/ocean/chart.do" class="d2-btn accordionsecond-tit"><span>해양일기도<i class="icon" aria-hidden="true"></i></span></a>
+                                          <ul class="d3-wrap accordionsecond-con">
+                                             
+                                                <li class="d3-item01">
+                                                   
+                                                   <a href="/w/ocean/chart/wave-model.do" target="_self" class="d3-btn link">수치파랑</a>
+                                                </li>
+                                             
+                                                <li class="d3-item02">
+                                                   
+                                                   <a href="/w/ocean/chart/surge-height.do" target="_self" class="d3-btn link">폭풍해일</a>
+                                                </li>
+                                             
+                                                <li class="d3-item03">
+                                                   
+                                                   <a href="/w/ocean/chart/current.do" target="_self" class="d3-btn link">해양순환</a>
+                                                </li>
+                                             
+                                                <li class="d3-item04">
+                                                   
+                                                   <a href="/w/ocean/chart/ripcurrent.do" target="_self" class="d3-btn link">이안류 예측정보</a>
+                                                </li>
+                                             
+                                          </ul>
+                                       </li>
+                                    
+                                       
+                                 
+                              </ul>
+                                 
+                           
+                        </li>
+                     
+                        <li class="d1-item03 accordionsecond-wrap">
+                           
+                              <a href="javascript:void(0);" class="d1-btn accordionsecond-tit" title="접힘">영상·일기도 <i class="icon" aria-hidden="true"></i></a>
+                              <ul class="d2-wrap accordionsecond-con">
+                                 
+                                    
+                                    
+                                       <li class="d2-item01">
+                                          <a href="javascript:void(window.open(&#39;https://www.weather.go.kr/wgis-nuri/html/map.html&#39;,&#39;vmap_pop&#39;,&#39;width=1200, height=728&#39;).focus());" target="_self" class="win-open d2-btn link"><span>날씨지도<i class="icon" aria-hidden="true"></i></span></a>
+                                          
+                                       </li>
+                                       
+                                 
+                                    
+                                    
+                                       <li class="d2-item02">
+                                          
+                                          <a href="/w/image/synthesis.do" target="_self" class="d2-btn link"><span>종합영상<i class="icon" aria-hidden="true"></i></span></a>
+                                       </li>
+                                       
+                                 
+                                        
+                                       <li class="d2-item03 accordionsecond-wrap">
+                                          <a href="/w/image/vshrt.do" class="d2-btn accordionsecond-tit"><span>초단기예측<i class="icon" aria-hidden="true"></i></span></a>
+                                          <ul class="d3-wrap accordionsecond-con">
+                                             
+                                                <li class="d3-item01">
+                                                   
+                                                   <a href="/w/image/vshrt/rain.do" target="_self" class="d3-btn link">강수</a>
+                                                </li>
+                                             
+                                                <li class="d3-item02">
+                                                   
+                                                   <a href="/w/image/vshrt/wind.do" target="_self" class="d3-btn link">바람</a>
+                                                </li>
+                                             
+                                          </ul>
+                                       </li>
+                                    
+                                       
+                                 
+                                    
+                                    
+                                       <li class="d2-item04">
+                                          
+                                          <a href="/w/image/radar.do" target="_self" class="d2-btn link"><span>레이더<i class="icon" aria-hidden="true"></i></span></a>
+                                       </li>
+                                       
+                                 
+                                        
+                                       <li class="d2-item05 accordionsecond-wrap">
+                                          <a href="/w/image/sat.do" class="d2-btn accordionsecond-tit"><span>위성<i class="icon" aria-hidden="true"></i></span></a>
+                                          <ul class="d3-wrap accordionsecond-con">
+                                             
+                                                <li class="d3-item01">
+                                                   
+                                                   <a href="/w/image/sat/gk2a.do" target="_self" class="d3-btn link">천리안위성 2A호</a>
+                                                </li>
+                                             
+                                                <li class="d3-item02">
+                                                   
+                                                   <a href="/w/image/sat/ascat.do" target="_self" class="d3-btn link">ASCAT</a>
+                                                </li>
+                                             
+                                                <li class="d3-item03">
+                                                   
+                                                   <a href="/w/image/sat/sat-case.do" target="_self" class="d3-btn link">사례영상</a>
+                                                </li>
+                                             
+                                          </ul>
+                                       </li>
+                                    
+                                       
+                                 
+                                    
+                                    
+                                       <li class="d2-item06">
+                                          
+                                          <a href="/w/image/lgt.do" target="_self" class="d2-btn link"><span>낙뢰<i class="icon" aria-hidden="true"></i></span></a>
+                                       </li>
+                                       
+                                 
+                                        
+                                       <li class="d2-item07 accordionsecond-wrap">
+                                          <a href="/w/image/chart.do" class="d2-btn accordionsecond-tit"><span>일기도<i class="icon" aria-hidden="true"></i></span></a>
+                                          <ul class="d3-wrap accordionsecond-con">
+                                             
+                                                <li class="d3-item01">
+                                                   
+                                                   <a href="/w/image/chart/analysis.do" target="_self" class="d3-btn link">분석일기도</a>
+                                                </li>
+                                             
+                                                <li class="d3-item02">
+                                                   
+                                                   <a href="/w/image/chart/forecast.do" target="_self" class="d3-btn link">육상예상일기도</a>
+                                                </li>
+                                             
+                                                <li class="d3-item03">
+                                                   
+                                                   <a href="/w/image/chart/expert.do" target="_self" class="d3-btn link">전문가용일기도</a>
+                                                </li>
+                                             
+                                                <li class="d3-item04">
+                                                   
+                                                   <a href="/w/image/chart/water-temp.do" target="_self" class="d3-btn link">바다수온</a>
+                                                </li>
+                                             
+                                          </ul>
+                                       </li>
+                                    
+                                       
+                                 
+                                    
+                                    
+                                       <li class="d2-item08">
+                                          
+                                          <a href="/w/image/freezing-rain.do" target="_self" class="d2-btn link"><span>어는비<i class="icon" aria-hidden="true"></i></span></a>
+                                       </li>
+                                       
+                                 
+                              </ul>
+                                 
+                           
+                        </li>
+                     
+                        <li class="d1-item04 accordionsecond-wrap">
+                           
+                              <a href="javascript:void(0);" class="d1-btn accordionsecond-tit" title="접힘">태풍 <i class="icon" aria-hidden="true"></i></a>
+                              <ul class="d2-wrap accordionsecond-con">
+                                 
+                                    
+                                    
+                                       <li class="d2-item01">
+                                          <a href="/w/typhoon/ko/weather/typhoon_02.jsp" target="_blank" class="d2-btn link"><span>상세정보<i class="icon" aria-hidden="true"></i></span></a>
+                                          
+                                       </li>
+                                       
+                                 
+                                    
+                                    
+                                       <li class="d2-item02">
+                                          
+                                          <a href="/w/typhoon/report.do" target="_self" class="d2-btn link"><span>통보문<i class="icon" aria-hidden="true"></i></span></a>
+                                       </li>
+                                       
+                                 
+                                    
+                                    
+                                       <li class="d2-item03">
+                                          
+                                          <a href="/w/typhoon/ifs-typ.do" target="_self" class="d2-btn link"><span>위험시점정보<i class="icon" aria-hidden="true"></i></span></a>
+                                       </li>
+                                       
+                                 
+                                    
+                                    
+                                       <li class="d2-item04">
+                                          
+                                          <a href="/w/typhoon/prediction.do" target="_self" class="d2-btn link"><span>모델예측<i class="icon" aria-hidden="true"></i></span></a>
+                                       </li>
+                                       
+                                 
+                                    
+                                    
+                                       <li class="d2-item05">
+                                          
+                                          <a href="/w/typhoon/monitor.do" target="_self" class="d2-btn link"><span>태풍감시<i class="icon" aria-hidden="true"></i></span></a>
+                                       </li>
+                                       
+                                 
+                                    
+                                    
+                                       <li class="d2-item06">
+                                          
+                                          <a href="/w/typhoon/typ-history.do" target="_self" class="d2-btn link"><span>과거태풍<i class="icon" aria-hidden="true"></i></span></a>
+                                       </li>
+                                       
+                                 
+                                    
+                                    
+                                       <li class="d2-item07">
+                                          
+                                          <a href="/w/typhoon/typ-stat.do" target="_self" class="d2-btn link"><span>태풍발생통계<i class="icon" aria-hidden="true"></i></span></a>
+                                       </li>
+                                       
+                                 
+                                        
+                                       <li class="d2-item08 accordionsecond-wrap">
+                                          <a href="/w/typhoon/basic.do" class="d2-btn accordionsecond-tit"><span>기본지식<i class="icon" aria-hidden="true"></i></span></a>
+                                          <ul class="d3-wrap accordionsecond-con">
+                                             
+                                                <li class="d3-item01">
+                                                   
+                                                   <a href="/w/typhoon/basic/info1.do" target="_self" class="d3-btn link">태풍이란</a>
+                                                </li>
+                                             
+                                                <li class="d3-item02">
+                                                   
+                                                   <a href="/w/typhoon/basic/info2.do" target="_self" class="d3-btn link">태풍의 이름</a>
+                                                </li>
+                                             
+                                                <li class="d3-item03">
+                                                   
+                                                   <a href="/w/typhoon/basic/info3.do" target="_self" class="d3-btn link">태풍의 분류</a>
+                                                </li>
+                                             
+                                          </ul>
+                                       </li>
+                                    
+                                       
+                                 
+                              </ul>
+                                 
+                           
+                        </li>
+                     
+                        <li class="d1-item05 accordionsecond-wrap">
+                           
+                              <a href="javascript:void(0);" class="d1-btn accordionsecond-tit" title="접힘">지진·화산 <i class="icon" aria-hidden="true"></i></a>
+                              <ul class="d2-wrap accordionsecond-con">
+                                 
+                                    
+                                    
+                                       <li class="d2-item01">
+                                          <a href="https://www.weather.go.kr/pews/" target="_blank" class="d2-btn link"><span>실시간 지진감시<i class="icon" aria-hidden="true"></i></span></a>
+                                          
+                                       </li>
+                                       
+                                 
+                                    
+                                    
+                                       <li class="d2-item02">
+                                          
+                                          <a href="/w/eqk-vol/recent-eqk.do" target="_self" class="d2-btn link"><span>최근지진<i class="icon" aria-hidden="true"></i></span></a>
+                                       </li>
+                                       
+                                 
+                                        
+                                       <li class="d2-item03 accordionsecond-wrap">
+                                          <a href="/w/eqk-vol/search.do" class="d2-btn accordionsecond-tit"><span>지진조회<i class="icon" aria-hidden="true"></i></span></a>
+                                          <ul class="d3-wrap accordionsecond-con">
+                                             
+                                                <li class="d3-item01">
+                                                   
+                                                   <a href="/w/eqk-vol/search/korea.do" target="_self" class="d3-btn link">국내</a>
+                                                </li>
+                                             
+                                                <li class="d3-item02">
+                                                   
+                                                   <a href="/w/eqk-vol/search/worldwide.do" target="_self" class="d3-btn link">국외</a>
+                                                </li>
+                                             
+                                          </ul>
+                                       </li>
+                                    
+                                       
+                                 
+                                        
+                                       <li class="d2-item04 accordionsecond-wrap">
+                                          <a href="/w/eqk-vol/archive.do" class="d2-btn accordionsecond-tit"><span>과거지진<i class="icon" aria-hidden="true"></i></span></a>
+                                          <ul class="d3-wrap accordionsecond-con">
+                                             
+                                                <li class="d3-item01">
+                                                   <a href="/w/eqk-vol/archive/stat/trend.do" target="_self" class="d3-btn link">지진통계</a>
+                                                   
+                                                </li>
+                                             
+                                                <li class="d3-item02">
+                                                   <a href="/w/eqk-vol/archive/major-eqk/912.do" target="_self" class="d3-btn link">주요지진</a>
+                                                   
+                                                </li>
+                                             
+                                                <li class="d3-item03">
+                                                   
+                                                   <a href="/w/eqk-vol/archive/historical-eqk.do" target="_self" class="d3-btn link">역사지진</a>
+                                                </li>
+                                             
+                                                <li class="d3-item04">
+                                                   <a href="https://www.kma.go.kr/kma/archive/pub.jsp?field1=grp&amp;text1=earthquakeye" target="_blank" class="d3-btn link">지진연보</a>
+                                                   
+                                                </li>
+                                             
+                                          </ul>
+                                       </li>
+                                    
+                                       
+                                 
+                                        
+                                       <li class="d2-item05 accordionsecond-wrap">
+                                          <a href="/w/eqk-vol/tsunami.do" class="d2-btn accordionsecond-tit"><span>지진해일<i class="icon" aria-hidden="true"></i></span></a>
+                                          <ul class="d3-wrap accordionsecond-con">
+                                             
+                                                <li class="d3-item01">
+                                                   
+                                                   <a href="/w/eqk-vol/tsunami/tsunami-case.do" target="_self" class="d3-btn link">지진해일 사례</a>
+                                                </li>
+                                             
+                                          </ul>
+                                       </li>
+                                    
+                                       
+                                 
+                                        
+                                       <li class="d2-item06 accordionsecond-wrap">
+                                          <a href="/w/eqk-vol/volcano.do" class="d2-btn accordionsecond-tit"><span>화산<i class="icon" aria-hidden="true"></i></span></a>
+                                          <ul class="d3-wrap accordionsecond-con">
+                                             
+                                                <li class="d3-item01">
+                                                   <a href="/w/eqk-vol/volcano/archive/korea.do" target="_self" class="d3-btn link">과거 화산 사례</a>
+                                                   
+                                                </li>
+                                             
+                                                <li class="d3-item02">
+                                                   
+                                                   <a href="/w/eqk-vol/volcano/disaster-type.do" target="_self" class="d3-btn link">화산재해 유형</a>
+                                                </li>
+                                             
+                                          </ul>
+                                       </li>
+                                    
+                                       
+                                 
+                                    
+                                    
+                                       <li class="d2-item07">
+                                          
+                                          <a href="/w/eqk-vol/eqk-standard.do" target="_self" class="d2-btn link"><span>지진·화산 특보 기준<i class="icon" aria-hidden="true"></i></span></a>
+                                       </li>
+                                       
+                                 
+                                    
+                                    
+                                       <li class="d2-item08">
+                                          <a href="javascript:void(window.open(&#39;/w/eqk-vol/baro/phenom.do&#39;,&#39;eqk_pop&#39;,&#39;width=820, height=760&#39;).focus());" target="_self" class="win-open d2-btn link"><span>행동요령/진도등급별현상<i class="icon" aria-hidden="true"></i></span></a>
+                                          
+                                       </li>
+                                       
+                                 
+                                    
+                                    
+                                       <li class="d2-item09">
+                                          <a href="https://www.kma.go.kr/eqk_pub/" target="_blank" class="d2-btn link"><span>온라인 지진 과학관<i class="icon" aria-hidden="true"></i></span></a>
+                                          
+                                       </li>
+                                       
+                                 
+                              </ul>
+                                 
+                           
+                        </li>
+                     
+                        <li class="d1-item06 accordionsecond-wrap">
+                           
+                              <a href="javascript:void(0);" class="d1-btn accordionsecond-tit" title="접힘">테마날씨 <i class="icon" aria-hidden="true"></i></a>
+                              <ul class="d2-wrap accordionsecond-con">
+                                 
+                                        
+                                       <li class="d2-item01 accordionsecond-wrap">
+                                          <a href="/w/theme/daily-life.do" class="d2-btn accordionsecond-tit"><span>생활기상정보<i class="icon" aria-hidden="true"></i></span></a>
+                                          <ul class="d3-wrap accordionsecond-con">
+                                             
+                                                <li class="d3-item01">
+                                                   
+                                                   <a href="/w/theme/daily-life/regional-composite-index.do" target="_self" class="d3-btn link">지역별 종합지수</a>
+                                                </li>
+                                             
+                                                <li class="d3-item02">
+                                                   
+                                                   <a href="/w/theme/daily-life/life-weather-index.do" target="_self" class="d3-btn link">생활기상지수</a>
+                                                </li>
+                                             
+                                                <li class="d3-item03">
+                                                   
+                                                   <a href="/w/theme/daily-life/life-weather-info-index.do" target="_self" class="d3-btn link">지수안내</a>
+                                                </li>
+                                             
+                                          </ul>
+                                       </li>
+                                    
+                                       
+                                 
+                                    
+                                    
+                                       <li class="d2-item02">
+                                          
+                                          <a href="/w/theme/mountain-weather.do" target="_self" class="d2-btn link"><span>산악날씨<i class="icon" aria-hidden="true"></i></span></a>
+                                       </li>
+                                       
+                                 
+                                    
+                                    
+                                       <li class="d2-item03">
+                                          <a href="http://amo.kma.go.kr/weather/airport.do" target="_blank" class="d2-btn link"><span>공항예보<i class="icon" aria-hidden="true"></i></span></a>
+                                          
+                                       </li>
+                                       
+                                 
+                                    
+                                    
+                                       <li class="d2-item04">
+                                          
+                                          <a href="/w/theme/beach-weather.do" target="_self" class="d2-btn link"><span>해수욕장예보<i class="icon" aria-hidden="true"></i></span></a>
+                                       </li>
+                                       
+                                 
+                                        
+                                       <li class="d2-item05 accordionsecond-wrap">
+                                          <a href="/w/theme/seasonal-observation.do" class="d2-btn accordionsecond-tit"><span>계절관측<i class="icon" aria-hidden="true"></i></span></a>
+                                          <ul class="d3-wrap accordionsecond-con">
+                                             
+                                                <li class="d3-item01">
+                                                   
+                                                   <a href="/w/theme/seasonal-observation/spring-flower.do" target="_self" class="d3-btn link">봄꽃개화현황</a>
+                                                </li>
+                                             
+                                                <li class="d3-item02">
+                                                   
+                                                   <a href="/w/theme/seasonal-observation/autumn-leaves.do" target="_self" class="d3-btn link">유명산 단풍현황</a>
+                                                </li>
+                                             
+                                          </ul>
+                                       </li>
+                                    
+                                       
+                                 
+                                    
+                                    
+                                       <li class="d2-item06">
+                                          
+                                          <a href="/w/theme/world-weather.do" target="_self" class="d2-btn link"><span>세계날씨<i class="icon" aria-hidden="true"></i></span></a>
+                                       </li>
+                                       
+                                 
+                              </ul>
+                                 
+                           
+                        </li>
+                     
+                        <li class="d1-item07 accordionsecond-wrap">
+                           
+                              <a href="javascript:void(0);" class="d1-btn accordionsecond-tit" title="접힘">황사 <i class="icon" aria-hidden="true"></i></a>
+                              <ul class="d2-wrap accordionsecond-con">
+                                 
+                                        
+                                       <li class="d2-item01 accordionsecond-wrap">
+                                          <a href="/w/dust/image.do" class="d2-btn accordionsecond-tit"><span>황사영상<i class="icon" aria-hidden="true"></i></span></a>
+                                          <ul class="d3-wrap accordionsecond-con">
+                                             
+                                                <li class="d3-item01">
+                                                   
+                                                   <a href="/w/dust/image/sfc-chart.do" target="_self" class="d3-btn link">지상일기도</a>
+                                                </li>
+                                             
+                                                <li class="d3-item02">
+                                                   
+                                                   <a href="/w/dust/image/sat.do" target="_self" class="d3-btn link">위성영상</a>
+                                                </li>
+                                             
+                                          </ul>
+                                       </li>
+                                    
+                                       
+                                 
+                                    
+                                    
+                                       <li class="d2-item02">
+                                          
+                                          <a href="/w/dust/model-prediction.do" target="_self" class="d2-btn link"><span>황사모델예측<i class="icon" aria-hidden="true"></i></span></a>
+                                       </li>
+                                       
+                                 
+                                        
+                                       <li class="d2-item03 accordionsecond-wrap">
+                                          <a href="/w/dust/dust-obs.do" class="d2-btn accordionsecond-tit"><span>황사관측현황<i class="icon" aria-hidden="true"></i></span></a>
+                                          <ul class="d3-wrap accordionsecond-con">
+                                             
+                                                <li class="d3-item01">
+                                                   
+                                                   <a href="/w/dust/dust-obs/values.do" target="_self" class="d3-btn link">관측값</a>
+                                                </li>
+                                             
+                                                <li class="d3-item02">
+                                                   
+                                                   <a href="/w/dust/dust-obs/graph.do" target="_self" class="d3-btn link">관측그래프</a>
+                                                </li>
+                                             
+                                          </ul>
+                                       </li>
+                                    
+                                       
+                                 
+                                    
+                                    
+                                       <li class="d2-item04">
+                                          
+                                          <a href="/w/dust/dust-obs-days.do" target="_self" class="d2-btn link"><span>황사관측일수<i class="icon" aria-hidden="true"></i></span></a>
+                                       </li>
+                                       
+                                 
+                              </ul>
+                                 
+                           
+                        </li>
+                     
+                        <li class="d1-item08 accordionsecond-wrap">
+                           
+                              <a href="javascript:void(0);" class="d1-btn accordionsecond-tit" title="접힘">관측·기후 <i class="icon" aria-hidden="true"></i></a>
+                              <ul class="d2-wrap accordionsecond-con">
+                                 
+                                        
+                                       <li class="d2-item01 accordionsecond-wrap">
+                                          <a href="/w/obs-climate/land.do" class="d2-btn accordionsecond-tit"><span>육상<i class="icon" aria-hidden="true"></i></span></a>
+                                          <ul class="d3-wrap accordionsecond-con">
+                                             
+                                                <li class="d3-item01">
+                                                   
+                                                   <a href="/w/obs-climate/land/city-obs.do" target="_self" class="d3-btn link">도시별관측</a>
+                                                </li>
+                                             
+                                                <li class="d3-item02">
+                                                   <a href="javascript:void(window.open(&#39;https://www.weather.go.kr/plus/land/current/aws_table_popup.jsp&#39;, &#39;aws_win&#39;, &#39;width=1240,height=700,scrollbars=yes,resizable=yes&#39;).focus());" target="_self" class="win-open d3-btn link">지역별상세관측</a>
+                                                   
+                                                </li>
+                                             
+                                                <li class="d3-item03">
+                                                   <a href="/w/obs-climate/land/past-obs/obs-by-day.do" target="_self" class="d3-btn link">과거관측</a>
+                                                   
+                                                </li>
+                                             
+                                          </ul>
+                                       </li>
+                                    
+                                       
+                                 
+                                        
+                                       <li class="d2-item02 accordionsecond-wrap">
+                                          <a href="/w/obs-climate/sea.do" class="d2-btn accordionsecond-tit"><span>바다<i class="icon" aria-hidden="true"></i></span></a>
+                                          <ul class="d3-wrap accordionsecond-con">
+                                             
+                                                <li class="d3-item01">
+                                                   
+                                                   <a href="/w/obs-climate/sea/buoy.do" target="_self" class="d3-btn link">해양기상부이</a>
+                                                </li>
+                                             
+                                                <li class="d3-item02">
+                                                   
+                                                   <a href="/w/obs-climate/sea/lhaws.do" target="_self" class="d3-btn link">등표</a>
+                                                </li>
+                                             
+                                                <li class="d3-item03">
+                                                   
+                                                   <a href="/w/obs-climate/sea/buoy-cosmos.do" target="_self" class="d3-btn link">파고부이</a>
+                                                </li>
+                                             
+                                                <li class="d3-item04">
+                                                   
+                                                   <a href="/w/obs-climate/sea/asia-coastal-obs.do" target="_self" class="d3-btn link">아시아연안관측실황</a>
+                                                </li>
+                                             
+                                                <li class="d3-item05">
+                                                   
+                                                   <a href="/w/obs-climate/sea/ship-obs.do" target="_self" class="d3-btn link">선박관측</a>
+                                                </li>
+                                             
+                                          </ul>
+                                       </li>
+                                    
+                                       
+                                 
+                                        
+                                       <li class="d2-item03 accordionsecond-wrap">
+                                          <a href="/w/obs-climate/climate.do" class="d2-btn accordionsecond-tit"><span>기후<i class="icon" aria-hidden="true"></i></span></a>
+                                          <ul class="d3-wrap accordionsecond-con">
+                                             
+                                                <li class="d3-item01">
+                                                   <a href="/w/obs-climate/climate/statistics/korea-char.do" target="_self" class="d3-btn link">기후통계</a>
+                                                   
+                                                </li>
+                                             
+                                                <li class="d3-item02">
+                                                   <a href="/w/obs-climate/climate/climate-change/climate-change-monitoring.do" target="_self" class="d3-btn link">기후변화과학</a>
+                                                   
+                                                </li>
+                                             
+                                          </ul>
+                                       </li>
+                                    
+                                       
+                                 
+                              </ul>
+                                 
+                           
+                        </li>
+                     
+                        <li class="d1-item09 accordionsecond-wrap">
+                                 
+                           
+                              <a href="/w/community.do" target="_self" class="d1-btn link">소식·지식<i class="icon" aria-hidden="true"></i></a>
+                              
+                           
+                        </li>
+                     
+                  </ul>
+               </nav>
+               
+            </div>
+            <div class="tab-item"><h1><a data-tab="2" href="#tab-plus"><span>기상플러스</span></a></h1>
+               <nav class="wplus-menu">
+                  <ul class="d1-wrap">
+                     <li class="d1-item01"><a href="https://www.weather.go.kr/plus/land/index.jsp" class="d1-btn link" target="_blank" title="새창열림">육상날씨 <i class="icon" aria-hidden="true"></i></a></li>
+                     <li class="d1-item02 accordionsecond-wrap"><a href="https://www.weather.go.kr/plus/sea/index.jsp" class="d1-btn link" target="_blank" title="새창열림">해상날씨 <i class="icon" aria-hidden="true"></i></a></li>
+                     <li class="d1-item03 accordionsecond-wrap"><a href="https://www.weather.go.kr/plus/images/index.jsp" class="d1-btn link" target="_blank" title="새창열림">날씨영상 <i class="icon" aria-hidden="true"></i></a></li>
+                     <li class="d1-item04 accordionsecond-wrap"><a href="https://www.weather.go.kr/plus/typ/index.jsp" class="d1-btn link" target="_blank" title="새창열림">태풍 <i class="icon" aria-hidden="true"></i></a></li>
+                     <li class="d1-item05 accordionsecond-wrap"><a href="https://www.weather.go.kr/plus/eqkvol/index.jsp" class="d1-btn link" target="_blank" title="새창열림">지진•화산 <i class="icon" aria-hidden="true"></i></a></li>
+                     <li class="d1-item06"><a href="https://www.weather.go.kr/plus/life/index.jsp" class="d1-btn link" target="_blank" title="새창열림">생활기상정보 <i class="icon" aria-hidden="true"></i></a></li>
+                     <li class="d1-item07"><a href="https://www.weather.go.kr/plus/theme/index.jsp" class="d1-btn link" target="_blank" title="새창열림">테마날씨 <i class="icon" aria-hidden="true"></i></a></li>
+                     <li class="d1-item08"><a href="https://www.weather.go.kr/plus/dust/index.jsp" class="d1-btn link" target="_blank" title="새창열림">황사 <i class="icon" aria-hidden="true"></i></a></li>
+                  </ul>
+               </nav>
+            </div>
+            <div class="tab-item"><h1><a class="link" data-tab="3" href="http://www.kma.go.kr/home/index.jsp" target="_blank" title="새창열림"><span>행정</span></a></h1>
+               <!-- Empty -->
+            </div>
+         </div>
+         <div class="bottom-list-mobile">
+            <!-- <div class="list-banner mgb-5">
+               <a href="https://www.weather.go.kr/w/special/sunrise/sunrise-place.do" class="link" target="_blank" title="새창열림"><img th:src="@{/resources/image/m_sunrise_254_40.jpg}" alt="해돋이 해넘이 특별기상지원"></a>
+            </div> -->
+            <!-- <div class="list-banner mgb-5">
+               <a href="https://www.weather.go.kr/w/special/newyear/index.do" class="link" target="_blank" title="새창열림"><img th:src="@{/resources/image/m_happy_newyear_264_40.jpg}" alt="설 연휴 기상정보"></a>
+            </div> -->
+            <!-- <div class="list-banner mgb-5">
+               <a href="https://www.epeople.go.kr/cmmn/idea/redirect.do?ideaRegNo=1AE-2211-0001665" class="link" target="_blank" title="새창열림"><img th:src="@{/resources/image/banner_mobile_221202_c.jpg}" alt="날씨누리 만족도 조사"></a>
+            </div> -->
+            <!-- <div class="list-banner mgb-5">
+               <a href="https://www.weather.go.kr/w/special/csat/school.do" class="link" target="_blank" title="새창열림"><img th:src="@{/resources/image/banner_m_exam_254_40.png}" alt="대학수학능력시험 특별기상지원"></a>
+            </div> -->
+            <!-- <div class="list-banner mgb-5">
+               <a href="https://www.weather.go.kr/w/special/chuseok/index.do" class="link" target="_blank" title="새창열림"><img th:src="@{/resources/image/btn_goto_chuseok_mobile_2021.jpg}" alt="추석 연휴 날씨"></a>
+            </div> -->
+            <!-- <div class="list-banner mgb-5">
+               <a href="https://www.weather.go.kr/w/special/summer/index.do" class="link" target="_blank" title="새창열림"><img th:src="@{/resources/image/btn_goto_summer_mobile.jpg}" alt="하계교통대책기간 기상지원"></a>
+            </div> -->
+            <!-- <div class="list-banner mgb-5" >
+               <a href="https://www.weather.go.kr/w/theme/seasonal-observation/autumn-leaves.do" class="link" target="_blank" title="새창열림"><img th:src="@{/resources/image/maple_banner_m.jpg}" alt="유명산 단풍현황 사진보기"></a>
+            </div> -->
+            <div class="list-banner mgb-5" >
+               <a href="https://www.kma.go.kr/kma/" class="link" target="_blank" title="새창열림"><img src="/w/resources/image/renew/btn_new2022kma_m.jpg" alt="행정누리집 바로가기"></a>
+            </div>
+            <!-- <div class="list-banner mgb-5">
+               <a href="https://hrm.kma.go.kr/kma_emp/hr_system/jsp/" class="link" target="_blank" title="새창열림"><img th:src="@{/resources/image/btn_goto_recruit_2020.png}" alt="기상9급 원서접수"></a>
+            </div>
+            <div class="list-banner mgb-5">
+               <a href="http://www.weather.go.kr/weather/special/forest_fire.jsp" class="link" target="_blank" title="새창열림"><img th:src="@{/resources/image/btn_goto_forestfire_2020.png}" alt="산불기상지원"></a>
+            </div> -->          
+            <!-- <div class="list-banner air-korea-banner">
+               <a href="http://m.airkorea.or.kr" class="link" target="_blank" title="새창열림"><img th:src="@{/resources/image/airkorea_banner.png}" alt="에어코리아 바로가기"></a>
+            </div> -->
+            <div class="list-banner mgb-5" >
+               <a href="https://www.kma.go.kr/home/app.html" class="link" target="_blank" title="새창열림"><img src="/w/resources/image/btn_new2022kma_m01.png" alt="내손안에 기상정보 기상청 날씨알리미"></a>
+            </div>
+            <!-- <div class="list-banner mgb-5" >
+               <a th:href="@{/resources/image/221208_improvement.png}" class="link" target="_blank" title="새창열림"><img th:src="@{/resources/image/b_m_imp_254_40.png}" alt="날씨누리 편의성 개선 안내"></a>
+            </div> -->
+         </div>
+         <div class="bottom-list">
+            <!-- <div class="list-banner mgb-5">
+               <a href="https://www.weather.go.kr/w/special/sunrise/sunrise-place.do" target="_blank" title="새창열림"><img th:src="@{/resources/image/w_sunrise_205_50.jpg}" alt="해돋이 해넘이 특별기상지원"></a>
+            </div>   -->
+            <!-- <div class="list-banner mgb-5">
+               <a href="https://www.weather.go.kr/w/special/newyear/index.do" target="_blank" title="새창열림"><img th:src="@{/resources/image/w_happy_newyear_205_50.jpg}" alt="설 연휴 기상정보"></a>
+            </div> -->
+            <!-- <div class="list-banner mgb-5">
+               <a href="https://www.epeople.go.kr/cmmn/idea/redirect.do?ideaRegNo=1AE-2211-0001665" class="link" target="_blank" title="새창열림"><img th:src="@{/resources/image/banner_weather_221202_c.jpg}" alt="날씨누리 만족도 조사"></a>
+            </div> -->
+            <!-- <div class="list-banner mgb-5">
+               <a href="https://www.weather.go.kr/w/special/csat/school.do" class="link" target="_blank" title="새창열림"><img th:src="@{/resources/image/banner_w_exam_205_50.png}" alt="대학수학능력시험 특별기상지원"></a>
+            </div> -->
+            <!-- <div class="list-banner mgb-5">
+               <a href="https://www.weather.go.kr/w/special/chuseok/index.do" class="link" target="_blank" title="새창열림"><img th:src="@{/resources/image/btn_goto_chuseok_2021.jpg}" alt="추석 연휴 날씨"></a>
+            </div> -->
+            <!-- <div class="list-banner mgb-5">
+               <a href="https://www.weather.go.kr/w/special/summer/index.do" target="_blank" title="새창열림"><img th:src="@{/resources/image/btn_goto_summer.jpg}" alt="하계교통대책기간 기상지원"></a>
+            </div>-->
+            <!--
+            <div class="list-banner mgb-5">
+               <a href="https://hrm.kma.go.kr/kma_emp/hr_system/jsp/" class="link" target="_blank" title="새창열림"><img th:src="@{/resources/image/btn_goto_recruit_2020.png}" alt="기상9급 원서접수"></a>
+            </div>
+            <div class="list-banner mgb-5">
+               <a href="http://www.weather.go.kr/weather/special/forest_fire.jsp" class="link" target="_blank" title="새창열림"><img th:src="@{/resources/image/btn_goto_forestfire_2020.png}" alt="산불기상지원"></a>
+            </div>-->
+            <!-- <div class="list-banner mgb-5">
+               <a href="https://www.weather.go.kr/weather/special/special_chuseok_01.jsp" class="link" target="_blank" title="새창열림"><img th:src="@{/resources/image/btn_goto_chuseok.png}" alt="한가위 달맞이 기상정보"></a>
+            </div> -->
+            <!-- <div class="list-banner mgb-5">
+               <a href="https://www.weather.go.kr/w/theme/seasonal-observation/autumn-leaves.do" class="link" target="_blank" title="새창열림"><img th:src="@{/resources/image/maple_banner_w.jpg}" alt="유명산 단풍현황 사진보기"></a>
+            </div> -->
+            <div class="list-banner mgb-5">
+               <a href="https://www.kma.go.kr/kma/" class="link" target="_blank" title="새창열림"><img src="/w/resources/image/renew/btn_new2022kma_w.jpg" alt="행정누리집 바로가기"></a>
+            </div>
+            
+            <div class="list-banner mgb-5">
+               <a href="https://www.kma.go.kr/home/app.html" target="_blank" title="새창열림"><img src="/w/resources/image/gnb_banner_02.jpg" alt="내손안에 기상정보 기상청 날씨알리미"></a>
+            </div>
+            <!--<div class="list-banner" >
+               <a th:href="@{/resources/image/221208_improvement.png}" class="link" target="_blank" title="새창열림"><img th:src="@{/resources/image/b_weather_imp_205_50.png}" alt="날씨누리 편의성 개선 안내"></a>
+            </div> -->
+            <h3 class="hide-tit">부속사이트</h3>
+            <ul class="family-site-wrap">
+               <!-- <li class="f-site-item"><a href="#" class="link">채용공고 진행중 <i class="icon" aria-hidden="true"></i></a> -->
+               <li class="f-site-item accordionsecond-wrap">
+                  <button class="f-site-btn accordionsecond-tit">기상청소속·산하기관</button>
+                  <div class="f-site-con accordionsecond-con">
+                     <div class="rolling-js">
+                        <div>
+                           <a href="http://www.kma.go.kr/aboutkma/intro/metropolitan/index.jsp" target="_blank" class="open-link" title="새창알림">수도권기상청</a>
+                           <a href="http://www.kma.go.kr/aboutkma/intro/busan/index.jsp" target="_blank" class="open-link"  title="새창알림">부산지방기상청</a>
+                           <a href="http://www.kma.go.kr/aboutkma/intro/gwangju/index.jsp" target="_blank" class="open-link" title="새창알림">광주지방기상청</a>
+                           <a href="http://www.kma.go.kr/aboutkma/intro/gangwon/index.jsp" target="_blank" class="open-link" title="새창알림">강원지방기상청</a>
+                           <a href="http://www.kma.go.kr/aboutkma/intro/daejeon/index.jsp" target="_blank" class="open-link" title="새창알림">대전지방기상청</a>
+                           <a href="http://www.kma.go.kr/aboutkma/intro/daegu/index.jsp" target="_blank" class="open-link" title="새창알림">대구지방기상청</a>
+                           <a href="http://www.kma.go.kr/aboutkma/intro/jeju/index.jsp" target="_blank" class="open-link" title="새창알림">제주지방기상청</a>
+                           <a href="http://www.kma.go.kr/aboutkma/intro/cheongju/index.jsp" target="_blank" class="open-link" title="새창알림">청주기상지청</a>
+                           <a href="http://www.kma.go.kr/aboutkma/intro/jeonju/index.jsp" target="_blank" class="open-link" title="새창알림">전주기상지청</a>
+                           <a href="http://www.kma.go.kr/nmc/" target="_blank" class="open-link" title="새창알림">수치모델링센터</a>
+                           <a href="http://www.kma.go.kr/mhi" target="_blank" class="open-link" title="새창알림">기상기후인재개발원</a>  
+                           <a href="http://nmsc.kma.go.kr" target="_blank" class="open-link" title="새창알림">국가기상위성센터</a>
+                           <a href="http://amo.kma.go.kr" target="_blank" class="open-link" title="새창알림">항공기상청</a>
+                           <a href="http://www.nims.go.kr/" target="_blank" class="open-link" title="새창알림">국립기상과학원</a>
+                           <a href="http://radar.kma.go.kr" target="_blank" class="open-link" title="새창알림">기상레이더센터</a>
+                           <a href="http://www.kma.go.kr/super" target="_blank" class="open-link" title="새창알림">국가기상슈퍼컴퓨터센터</a>
+                           <a href="http://www.kmiti.or.kr" target="_blank" class="open-link" title="새창알림">한국기상산업기술원</a>
+                        <a href="http://www.apcc21.org" target="_blank" class="open-link" title="새창알림">APEC기후센터</a>
+                        <a href="http://www.kiaps.org" target="_blank" class="open-link" title="새창알림">차세대수치예보모델개발사업단</a>
+                        </div>
+                     </div>
+                  </div>
+               </li>
+               <li class="f-site-item accordionsecond-wrap">
+                  <button class="f-site-btn accordionsecond-tit">주요행정기관</button>
+                  <div class="f-site-con accordionsecond-con">
+                     <div class="rolling-js2">
+                        <div>
+                           <a href="http://www.president.go.kr/" target="_blank" class="open-link" title="새창알림">대한민국 대통령실</a>
+                           <a href="http://www.opm.go.kr/" target="_blank" class="open-link" title="새창알림">국무총리실</a>
+                           <a href="http://www.bai.go.kr/" target="_blank" class="open-link" title="새창알림">감사원</a>
+                           <a href="http://www.nis.go.kr/" target="_blank" class="open-link" title="새창알림">국가정보원</a>
+                           <a href="http://www.kcc.go.kr/" target="_blank" class="open-link" title="새창알림">방송통신위원회</a>
+                           <a href="http://www.humanrights.go.kr/" target="_blank" class="open-link" title="새창알림">국가인권위원회</a>
+                           <a href="http://www.ftc.go.kr/" target="_blank" class="open-link" title="새창알림">공정거래위원회</a>
+                           <a href="http://www.fsc.go.kr/" target="_blank" class="open-link" title="새창알림">금융위원회</a>
+                           <a href="http://www.acrc.go.kr/" target="_blank" class="open-link" title="새창알림">국민권익위원회</a>
+                           <a href="http://nas.na.go.kr/" target="_blank" class="open-link" title="새창알림">국회사무처</a>
+                           <p class="tit">18부</p>
+                           <a href="http://www.mosf.go.kr/" target="_blank" class="open-link" title="새창알림">기획재정부</a>
+                           <a href="http://www.msit.go.kr/" target="_blank" class="open-link" title="새창알림">과학기술정보통신부</a>
+                           <a href="http://www.moe.go.kr/" target="_blank" class="open-link" title="새창알림">교육부</a>
+                           <a href="http://www.mofat.go.kr" target="_blank" class="open-link" title="새창알림">외교부</a>
+                           <a href="http://www.unikorea.go.kr/" target="_blank" class="open-link" title="새창알림">통일부</a>
+                           <a href="http://www.moj.go.kr/" target="_blank" class="open-link" title="새창알림">법무부</a>
+                           <a href="http://www.mnd.go.kr/" target="_blank" class="open-link" title="새창알림">국방부</a>
+                           <a href="http://www.mois.go.kr/" target="_blank" class="open-link" title="새창알림">행정안전부</a>
+                           <a href="http://www.mcst.go.kr/" target="_blank" class="open-link" title="새창알림">문화체육관광부</a>
+                           <a href="http://www.mafra.go.kr/" target="_blank" class="open-link" title="새창알림">농림축산식품부</a>
+                           <a href="http://www.motie.go.kr/www/main.do" target="_blank" class="open-link" title="새창알림">산업통상자원부</a>
+                           <a href="http://www.mohw.go.kr/" target="_blank" class="open-link" title="새창알림">보건복지부</a>
+                           <a href="http://www.me.go.kr/" target="_blank" class="open-link" title="새창알림">환경부</a>
+                           <a href="http://www.moel.go.kr/" target="_blank" class="open-link" title="새창알림">고용노동부</a>
+                           <a href="http://www.mogef.go.kr/" target="_blank" class="open-link" title="새창알림">여성가족부</a>
+                           <a href="http://www.molit.go.kr/" target="_blank" class="open-link" title="새창알림">국토교통부</a>
+                           <a href="http://www.mof.go.kr/" target="_blank" class="open-link" title="새창알림">해양수산부</a>
+                           
+                           <p class="tit">4처</p>
+                           <a href="http://www.mpm.go.kr" target="_blank" class="open-link" title="새창알림">인사혁신처</a>
+                           <a href="http://www.moleg.go.kr" target="_blank" class="open-link" title="새창알림">법제처</a>
+                           <a href="http://www.mpva.go.kr" target="_blank" class="open-link" title="새창알림">국가보훈처</a>
+                           <a href="http://www.mfds.go.kr" target="_blank" class="open-link" title="새창알림">식품의약품안전처</a>
+                           <p class="tit">17청</p>
+                           <a href="http://www.nts.go.kr/" target="_blank" class="open-link" title="새창알림">국세청</a>
+                           <a href="http://www.customs.go.kr/" target="_blank" class="open-link" title="새창알림">관세청</a>
+                           <a href="http://www.pps.go.kr/" target="_blank" class="open-link" title="새창알림">조달청</a>
+                           <a href="http://kostat.go.kr/" target="_blank" class="open-link" title="새창알림">통계청</a>
+                           <a href="http://www.spo.go.kr/" target="_blank" class="open-link" title="새창알림">검찰청</a>
+                           <a href="http://www.mma.go.kr/" target="_blank" class="open-link" title="새창알림">병무청</a>
+                           <a href="http://www.dapa.go.kr/" target="_blank" class="open-link" title="새창알림">방위사업청</a>
+                           <a href="http://www.nfa.go.kr/nfa/" target="_blank" class="open-link" title="새창알림">소방청</a>
+                           <a href="http://www.kcg.go.kr" target="_blank" class="open-link" title="새창알림">해양경찰청</a>
+                           <a href="http://www.police.go.kr/" target="_blank" class="open-link" title="새창알림">경찰청</a> 
+                           <a href="http://www.cha.go.kr" target="_blank" class="open-link" title="새창알림">문화재청</a>
+                           <a href="http://www.rda.go.kr/" target="_blank" class="open-link" title="새창알림">농촌진흥청</a>
+                           <a href="http://www.forest.go.kr/" target="_blank" class="open-link" title="새창알림">산림청</a>
+                           <a href="http://www.smba.go.kr/" target="_blank" class="open-link" title="새창알림">중소벤처기업부</a>
+                           <a href="http://www.kipo.go.kr/" target="_blank" class="open-link" title="새창알림">특허청</a>
+                           <a href="http://www.kma.go.kr/" target="_blank" class="open-link" title="새창알림">기상청</a>
+                           <a href="http://www.naacc.go.kr/" target="_blank" class="open-link" title="새창알림">행정중심복합도시건설청</a>
+                           <a href="http://www.saemangeum.go.kr/" target="_blank" class="open-link" title="새창알림">새만금개발청</a>
+                       </div>
+                     </div>
+                  </div>
+               </li>
+               <li class="f-site-item accordionsecond-wrap">
+                  <button class="f-site-btn accordionsecond-tit">방재유관기관</button>
+                  <div class="f-site-con accordionsecond-con">
+                     <div class="rolling-js">
+                        <div>                        
+                        <a href="http://119.seoul.go.kr/" target="_blank" class="open-link" title="새창알림">서울종합방재센터</a>
+                        <a href="http://www.ndmi.go.kr" target="_blank" class="open-link" title="새창알림">국립재난안전연구원</a>
+                        <a href="http://www.hrfco.go.kr/" target="_blank" class="open-link" title="새창알림">한강홍수통제소</a>
+                        <a href="http://www.mois.go.kr/frt/a01/frtMain.do" target="_blank" class="open-link" title="새창알림">중앙재난안전대책본부</a>
+                        <a href="http://www.airkorea.or.kr" target="_blank" class="open-link" title="새창알림">대기오염도실시간공개</a>
+                        <a href="http://www.wamis.go.kr" target="_blank" class="open-link" title="새창알림">국가수자원관리종합정보시스템</a>
+                        <a href="https://d.kbs.co.kr" target="_blank" class="open-link" title="새창알림">KBS재난포털</a>
+                        </div>
+                     </div>
+                  </div>
+               </li>
+               <li class="f-site-item accordionsecond-wrap">
+                  <button class="f-site-btn accordionsecond-tit">외국기상청</button>
+                  <div class="f-site-con accordionsecond-con">
+                     <div class="rolling-js">
+                        <div>
+                        <a href="http://www.nws.noaa.gov/" target="_blank" class="open-link" title="새창알림">미국</a>
+                        <a href="http://www.jma.go.jp" target="_blank" class="open-link" title="새창알림">일본</a>
+                        <a href="http://www.cma.gov.cn" target="_blank" class="open-link" title="새창알림">중국</a>
+                        <a href="http://www.metoffice.gov.uk/" target="_blank" class="open-link" title="새창알림">영국</a>
+                        <a href="http://www.meteo.fr/e_index.html" target="_blank" class="open-link" title="새창알림">프랑스</a>
+                        <a href="http://www.wmo.int" target="_blank" class="open-link" title="새창알림">세계기상기구WMO</a>
+                        </div>
+                     </div>
+                  </div>
+               </li>
+            </ul>  
+        </div>
+     </div>
+  </header>
+
+
+         <section class="page-wrap">
+             <div class="right-content">
+                
+                 <!-- 메인상단 -->
+                 <div class="cont-head">
+                       <div class="cont-head-area">
+                           <div class="site-tit-wrap">
+                               <div class="logo">
+                                   <a href="/w/" class="btn-tit link">기상청 날씨누리</a>
+                               </div>
+                           </div>
+                           <div class="util">
+                               <!-- <a href="#" class="util-item1 pop-open" data-pop-name="open-search-pop" aria-label="검색"><span style="text-indent:-999999px; position:absolute;">검색</span></a> -->
+                               <a href="#" class="util-item2 pop-open" data-pop-name="open-set-pop" aria-label="사용자 설정"><span style="text-indent:-999999px; position:absolute;">사용자 설정</span></a>
+                               <a href="#" class="util-item3 pop-open " data-pop-name="open-menu-pop" aria-label="메뉴"><span style="text-indent:-999999px; position:absolute;">데스크탑용 메뉴</span></a>
+                               <a href="#" class="util-item3 mobile-menu " data-pop-name="open-menu-pop" aria-label="메뉴"><span style="text-indent:-999999px; position:absolute;">모바일용 메뉴</span></a>
+                           </div>
+                           <h2>도시별관측</h2>
+                           <div class="sub-nav-wrap">
+                               <div class="sub-nav-box">
+                                   <div class="sub-home"><a href="/w/"><span style="text-indent:-999999px; position:absolute;">홈 바로가기</span></a></div>
+                           <div class="sub-nav-area">
+                                   <ul class="sub-nav accordionsecond-wrap selectoption">
+                                       <li class="sub-nav-item">
+                                          
+                                             
+                                            
+                                             
+                                            
+                                             
+                                            
+                                             
+                                            
+                                             
+                                            
+                                             
+                                            
+                                             
+                                            
+                                             <button class="sub-nav-item-btn accordionsecond-tit btn">관측·기후</button>
+                                            
+                                             
+                                            
+                                          <div class="accordionsecond-con select-con">
+                                             
+                                                 <a href="/w/weather/warning/status.do" target="_self" class="con select-btn link">날씨</a>
+                                                 
+                                              
+                                                 <a href="/w/ocean/warning.do" target="_self" class="con select-btn link">바다</a>
+                                                 
+                                              
+                                                 <a href="/w/image/vshrt/rain.do" target="_self" class="con select-btn link">영상·일기도</a>
+                                                 
+                                              
+                                                 <a href="/w/typhoon/report.do" target="_self" class="con select-btn link">태풍</a>
+                                                 
+                                              
+                                                 <a href="/w/eqk-vol/recent-eqk.do" target="_self" class="con select-btn link">지진·화산</a>
+                                                 
+                                              
+                                                 <a href="/w/theme/mountain-weather.do" target="_self" class="con select-btn link">테마날씨</a>
+                                                 
+                                              
+                                                 <a href="/w/dust/image/sfc-chart.do" target="_self" class="con select-btn link">황사</a>
+                                                 
+                                              
+                                                 <a href="/w/obs-climate/land/city-obs.do" target="_self" class="con select-btn link">관측·기후</a>
+                                                 
+                                              
+                                                 <a href="/w/community.do" target="_self" class="con select-btn link">소식·지식</a>
+                                                 
+                                              
+                                           </div>
+                                       </li>
+                                       <li class="sub-nav-item">
+                                          
+                                             <button class="sub-nav-item-btn accordionsecond-tit btn">육상</button>
+                                            
+                                             
+                                            
+                                             
+                                            
+                                          <div class="accordionsecond-con select-con">
+                                             
+                                                 <a href="/w/obs-climate/land/city-obs.do" target="_self" class="con select-btn link">육상</a>
+                                                 
+                                              
+                                                 <a href="/w/obs-climate/sea/buoy.do" target="_self" class="con select-btn link">바다</a>
+                                                 
+                                              
+                                                 <a href="/w/obs-climate/climate/korea-climate/korea-char.do" target="_self" class="con select-btn link">기후</a>
+                                                 
+                                              
+                                           </div>
+                                       </li>
+                                       <li class="sub-nav-item">
+                                          
+                                             <button class="sub-nav-item-btn accordionsecond-tit btn">도시별관측</button>
+                                            
+                                             
+                                            
+                                             
+                                            
+                                          <div class="accordionsecond-con select-con">
+                                             
+                                                 
+                                                 <a href="/w/obs-climate/land/city-obs.do" target="_self" class="con select-btn link">도시별관측</a>
+                                              
+                                                 <a href="javascript:void(window.open(&#39;https://www.weather.go.kr/plus/land/current/aws_table_popup.jsp&#39;, &#39;aws_win&#39;, &#39;width=1240,height=700,scrollbars=yes,resizable=yes&#39;).focus());" target="_self" class="con select-btn link">지역별상세관측</a>
+                                                 
+                                              
+                                                 <a href="/w/obs-climate/land/past-obs/obs-by-day.do" target="_self" class="con select-btn link">과거관측</a>
+                                                 
+                                              
+                                           </div>
+                                       </li>
+                                       <li class="sub-nav-item">
+                                          
+                                          <div class="accordionsecond-con select-con">
+                                             
+                                           </div>
+                                       </li>
+                                   </ul>
+                           </div>
+                               </div>
+                               <div class="btn-box">
+                                    <a href="#share" class="sym-btn share" title="공유하기" style="">공유하기</a>
+                                    <a href="/wnuri_help/html/obs-climate/city-obs.jsp" target="_blank" title="새창열림" onclick="window.open(this.href, 'wnuri_help', 'width=1440, height=900, scrollbar=yes, resize=yes').focus(); return false;" class="sym-btn quest">도움말</a>
+                                    <div class="share_box" style="display: none;">
+                              <div class="inbox">
+                                 <span class="band">
+                                    <script src="//developers.band.us/js/share/band-button.js?v=10112022"></script>
+                                    
+                                    <script>new ShareBand.makeButton({"lang":"ko","type":"d"});</script>
+                                 </span>
+                                 <a href="#" class="fb" data-to="facebook" title="새창열림">페이스북</a>                     
+                                 <a href="#" class="tw" data-to="twitter" title="새창열림">트위터</a>   
+                                 <a href="#" class="kk" data-to="kakao" title="새창열림">카카오</a>   
+                                 <a href="#" class="lk clipboard" data-to="link" title="주소 복사">주소 복사</a>
+                                 <span class="arr"></span>
+                              </div>
+                           </div>
+                                </div>
+                           </div>
+                       </div>
+                   </div>
+                   
+                   
+         <a id="container"></a>
+         <div class="cont-wrap">
+            <div class="cmp-city-obs">
+               <div class="cmp-stack">
+                  <div class="kmap-app">
+                     <div class="kmap-wrap" id="kmap"></div>
+                  </div>
+               </div>
+               <form id="default-form" class="cmp-form" action="city-obs.do" method="get" autocomplete="off">
+                  <input type="hidden" name="auto_man" value="m">
+                  <input type="hidden" name="stn" value="0">
+                  <input type="hidden" name="dtm" value="">
+                  <div class="cmp-form-row">
+                     <div class="cmp-form-select cmp-form-input-tripple label-on">
+                        <label for="select-type">요소</label>
+                        <div class="select"><select id="select-type" name="type"
+                           >
+                           <option value="t99" selected="selected">&lt;시간자료&gt;</option>
+                           <option value="t99" selected="selected">종합</option>
+                           <option value="t11">기온</option>
+                           <option value="t12">이슬점</option>
+                           <option value="t13">상대습도</option>
+                           <option value="t48">일강수량</option>
+                           <option value="t19">신적설</option>
+                           <option value="t20">적설</option>
+                           <option value="t01">풍향</option>
+                           <option value="t02">풍속</option>
+                           <option value="t24">전운량</option>
+                           <option value="t08">해면기압</option>
+                        </select></div>
+                        <input type="submit" data-form-role="submit" data-form-id="default-form" value="선택"/>
+                     </div>
+                     <div class="cmp-form-select cmp-form-input-tripple label-on">
+                        <label for="select-reg">지역</label>
+                        <div class="select"><select id="select-reg" name="reg"
+                           
