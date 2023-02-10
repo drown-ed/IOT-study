@@ -28,13 +28,13 @@
         - 데이터포털 OpenAPI 크롤링
         - BeautifulSoup 크롤링
 
-## Day 09 (23.02.09)
+### Day 09 (23.02.09)
 1. 파이썬 응용
     - GUI 개발
         - PyQt basic
         - PyQt Widget
 
-## Day 10 (23.02.10)
+### Day 10 (23.02.10)
 1. 파이썬 응용
     - GUI 개발
         - PyQt Widget +
