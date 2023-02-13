@@ -39,3 +39,7 @@
     - GUI 개발
         - PyQt Widget +
         - PyQt dialog
+2. 코딩테스트
+
+### Day 11 (23.02.13)
+1. 자료구조
