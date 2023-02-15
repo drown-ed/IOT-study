@@ -52,3 +52,8 @@
     - linked list
     - queue
     - 파이썬 라이브러리 스택, 큐, 기타 자료구조
+
+### Day 13 (23.02.15)
+1. 자료구조
+    - stack
+    - queue
