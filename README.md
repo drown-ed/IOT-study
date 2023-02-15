@@ -57,3 +57,5 @@
 1. 자료구조
     - stack
     - queue
+    - tree 
+    - graph
