@@ -59,3 +59,11 @@
     - queue
     - tree 
     - graph
+
+### Day 14 (23.02.16)
+1. 자료구조
+    - graph (DFS)
+    - recursive call
+    - sorthing algorithm
+    - search
+    - Dynamic Programming
