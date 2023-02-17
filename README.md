@@ -67,3 +67,6 @@
     - sorthing algorithm
     - search
     - Dynamic Programming
+
+### Day 15 (23.02.17)
+1. 자료구조
