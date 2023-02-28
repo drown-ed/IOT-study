@@ -107,3 +107,8 @@
     - MySQL 설치 / 설정
     - Sample DB 설치
     - WorkBench 사용법
+
+### Day 22 (23.02.28)
+1. MySQL 학습
+    - DB 모델링
+    - MySQL 유틸리티
