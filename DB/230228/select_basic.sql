@@ -41,3 +41,17 @@ SELECT b.userID,
 		(SELECT name FROM usertbl WHERE userID = b.userID) AS '이름',
         b.prodName, b.price * b.amount AS '판매액' 
         FROM buytbl AS b;
+
+SELECT DISTINCT addr
+	FROM usertbl;
+
+USE homeplus;
+
+SELECT * FROM indexTbl
+	LIMIT 5;
+
+use sqlDB;
+
+SELECT * FROM buytbl;
+
+SELECT num, prodName, price FROM buytbl WHERE groupName = '전자';
