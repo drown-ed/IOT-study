@@ -47,3 +47,5 @@ INSERT INTO buytbl VALUES(NULL, 'BBK', '운동화', NULL   , 30,   2);
 
 SELECT * FROM usertbl;
 SELECT * FROM buytbl;
+
+SELECT name, birthYear, height FROM usertbl WHERE birthYear > 1069 ORDER BY height;
