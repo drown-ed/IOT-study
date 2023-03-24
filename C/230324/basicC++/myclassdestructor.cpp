@@ -1,3 +1,4 @@
+#define CRT_SECURE_NO_WARNINGS			# 오류 없애주는 코드
 #include <iostream>
 using namespace std;
 
