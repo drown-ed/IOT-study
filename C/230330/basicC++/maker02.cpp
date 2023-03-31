@@ -5,14 +5,36 @@ using namespace std;
 class Person {
 
 private:
-	char name[30];
+	char * name;
 	int birthday;
 
 public:
-	Person(const char* name, int birth)
+	Person(const char* iname, int birth)
 		: birthday(birth)
 	{
-		strcpy_s(this->name, name);
+		int len = strlen(iname) + 1;
+		name = new char[len];
+		strcpy_s(this->name, len, iname);
+	}
+
+	Person(const Person& other) {
+		birthday = other.birthday;
+
+		int len = strlen(other.name) + 1;
+		name = new char[len];
+		strcpy_s(name, len, other.name);
+	}
+
+	Person& operator=(const Person& other) {
+		delete[] name;
+
+		int len = strlen(other.name) + 1;
+		name = new char[len];
+		strcpy_s(name, len, other.name);
+
+		birthday = other.birthday;
+
+		return *this;
 	}
 
 	void showPerson()
@@ -27,19 +49,18 @@ public:
 	}
 };
 
-void main() {
+int main() {
 
-	Person *p1 = new Person("홍길동", 19990909);
-	p1 -> showPerson();
+	Person p1("홍길동", 19990909);
+	p1.showPerson();
 
-	Person * p2 = p1;
-	p2 -> showPerson();
+	Person p2 = p1;
+	p2.showPerson();
 
-	Person * p3 = p2;
-	p3 -> showPerson();
+	Person p3("강감찬", 20001201);		// 연산자 오버로딩
+	p3 = p1;
 
-	p1->~Person();
-	p2->~Person();
-	p3->~Person();
+	p3.showPerson();
 
+	return 0;
 }
