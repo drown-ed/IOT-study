@@ -1,0 +1,8 @@
+C:\Source\IOT-study\C#\230404\07_cts\bin\Debug\07_cts.exe.config
+C:\Source\IOT-study\C#\230404\07_cts\bin\Debug\07_cts.exe
+C:\Source\IOT-study\C#\230404\07_cts\bin\Debug\07_cts.pdb
+C:\Source\IOT-study\C#\230404\07_cts\obj\Debug\07_cts.csproj.AssemblyReference.cache
+C:\Source\IOT-study\C#\230404\07_cts\obj\Debug\07_cts.csproj.SuggestedBindingRedirects.cache
+C:\Source\IOT-study\C#\230404\07_cts\obj\Debug\07_cts.csproj.CoreCompileInputs.cache
+C:\Source\IOT-study\C#\230404\07_cts\obj\Debug\07_cts.exe
+C:\Source\IOT-study\C#\230404\07_cts\obj\Debug\07_cts.pdb

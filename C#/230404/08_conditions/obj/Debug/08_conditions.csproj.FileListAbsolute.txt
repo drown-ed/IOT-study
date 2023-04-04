@@ -1,0 +1,8 @@
+C:\Source\IOT-study\C#\230404\08_conditions\bin\Debug\08_conditions.exe.config
+C:\Source\IOT-study\C#\230404\08_conditions\bin\Debug\08_conditions.exe
+C:\Source\IOT-study\C#\230404\08_conditions\bin\Debug\08_conditions.pdb
+C:\Source\IOT-study\C#\230404\08_conditions\obj\Debug\08_conditions.csproj.AssemblyReference.cache
+C:\Source\IOT-study\C#\230404\08_conditions\obj\Debug\08_conditions.csproj.SuggestedBindingRedirects.cache
+C:\Source\IOT-study\C#\230404\08_conditions\obj\Debug\08_conditions.csproj.CoreCompileInputs.cache
+C:\Source\IOT-study\C#\230404\08_conditions\obj\Debug\08_conditions.exe
+C:\Source\IOT-study\C#\230404\08_conditions\obj\Debug\08_conditions.pdb

@@ -1,0 +1,8 @@
+C:\Source\IOT-study\C#\230404\03_object\bin\Debug\03_object.exe.config
+C:\Source\IOT-study\C#\230404\03_object\bin\Debug\03_object.exe
+C:\Source\IOT-study\C#\230404\03_object\bin\Debug\03_object.pdb
+C:\Source\IOT-study\C#\230404\03_object\obj\Debug\03_object.csproj.AssemblyReference.cache
+C:\Source\IOT-study\C#\230404\03_object\obj\Debug\03_object.csproj.SuggestedBindingRedirects.cache
+C:\Source\IOT-study\C#\230404\03_object\obj\Debug\03_object.csproj.CoreCompileInputs.cache
+C:\Source\IOT-study\C#\230404\03_object\obj\Debug\03_object.exe
+C:\Source\IOT-study\C#\230404\03_object\obj\Debug\03_object.pdb

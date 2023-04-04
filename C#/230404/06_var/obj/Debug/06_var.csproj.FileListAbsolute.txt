@@ -1,0 +1,8 @@
+C:\Source\IOT-study\C#\230404\06_var\bin\Debug\06_var.exe.config
+C:\Source\IOT-study\C#\230404\06_var\bin\Debug\06_var.exe
+C:\Source\IOT-study\C#\230404\06_var\bin\Debug\06_var.pdb
+C:\Source\IOT-study\C#\230404\06_var\obj\Debug\06_var.csproj.AssemblyReference.cache
+C:\Source\IOT-study\C#\230404\06_var\obj\Debug\06_var.csproj.SuggestedBindingRedirects.cache
+C:\Source\IOT-study\C#\230404\06_var\obj\Debug\06_var.csproj.CoreCompileInputs.cache
+C:\Source\IOT-study\C#\230404\06_var\obj\Debug\06_var.exe
+C:\Source\IOT-study\C#\230404\06_var\obj\Debug\06_var.pdb

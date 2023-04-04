@@ -1,0 +1,8 @@
+C:\Source\IOT-study\C#\230404\characters\bin\Debug\characters.exe.config
+C:\Source\IOT-study\C#\230404\characters\bin\Debug\characters.exe
+C:\Source\IOT-study\C#\230404\characters\bin\Debug\characters.pdb
+C:\Source\IOT-study\C#\230404\characters\obj\Debug\02_characters.csproj.AssemblyReference.cache
+C:\Source\IOT-study\C#\230404\characters\obj\Debug\02_characters.csproj.SuggestedBindingRedirects.cache
+C:\Source\IOT-study\C#\230404\characters\obj\Debug\02_characters.csproj.CoreCompileInputs.cache
+C:\Source\IOT-study\C#\230404\characters\obj\Debug\characters.exe
+C:\Source\IOT-study\C#\230404\characters\obj\Debug\characters.pdb

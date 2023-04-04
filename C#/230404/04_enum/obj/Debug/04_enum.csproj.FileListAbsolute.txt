@@ -1,0 +1,8 @@
+C:\Source\IOT-study\C#\230404\04_enum\bin\Debug\04_enum.exe.config
+C:\Source\IOT-study\C#\230404\04_enum\bin\Debug\04_enum.exe
+C:\Source\IOT-study\C#\230404\04_enum\bin\Debug\04_enum.pdb
+C:\Source\IOT-study\C#\230404\04_enum\obj\Debug\04_enum.csproj.AssemblyReference.cache
+C:\Source\IOT-study\C#\230404\04_enum\obj\Debug\04_enum.csproj.SuggestedBindingRedirects.cache
+C:\Source\IOT-study\C#\230404\04_enum\obj\Debug\04_enum.csproj.CoreCompileInputs.cache
+C:\Source\IOT-study\C#\230404\04_enum\obj\Debug\04_enum.exe
+C:\Source\IOT-study\C#\230404\04_enum\obj\Debug\04_enum.pdb
