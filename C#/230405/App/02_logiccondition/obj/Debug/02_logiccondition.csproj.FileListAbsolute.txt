@@ -1,0 +1,8 @@
+C:\Source\IOT-study\C#\230405\App\02_logiccondition\bin\Debug\02_logiccondition.exe.config
+C:\Source\IOT-study\C#\230405\App\02_logiccondition\bin\Debug\02_logiccondition.exe
+C:\Source\IOT-study\C#\230405\App\02_logiccondition\bin\Debug\02_logiccondition.pdb
+C:\Source\IOT-study\C#\230405\App\02_logiccondition\obj\Debug\02_logiccondition.csproj.AssemblyReference.cache
+C:\Source\IOT-study\C#\230405\App\02_logiccondition\obj\Debug\02_logiccondition.csproj.SuggestedBindingRedirects.cache
+C:\Source\IOT-study\C#\230405\App\02_logiccondition\obj\Debug\02_logiccondition.csproj.CoreCompileInputs.cache
+C:\Source\IOT-study\C#\230405\App\02_logiccondition\obj\Debug\02_logiccondition.exe
+C:\Source\IOT-study\C#\230405\App\02_logiccondition\obj\Debug\02_logiccondition.pdb

@@ -125,3 +125,11 @@
     - .NET framework / .NET 5.0
     - Visual Studio C# 구성
     - 기본 문법
+
+### Day 47 (23.04.05)
+1. C# 기본
+    - 기본 문법
+
+2. Win App
+    - Winforms vs WPF 개요
+    - Winforms 기초

@@ -1,0 +1,8 @@
+C:\Source\IOT-study\C#\230405\App\01_operator\bin\Debug\01_operator.exe.config
+C:\Source\IOT-study\C#\230405\App\01_operator\bin\Debug\01_operator.exe
+C:\Source\IOT-study\C#\230405\App\01_operator\bin\Debug\01_operator.pdb
+C:\Source\IOT-study\C#\230405\App\01_operator\obj\Debug\01_operator.csproj.AssemblyReference.cache
+C:\Source\IOT-study\C#\230405\App\01_operator\obj\Debug\01_operator.csproj.SuggestedBindingRedirects.cache
+C:\Source\IOT-study\C#\230405\App\01_operator\obj\Debug\01_operator.csproj.CoreCompileInputs.cache
+C:\Source\IOT-study\C#\230405\App\01_operator\obj\Debug\01_operator.exe
+C:\Source\IOT-study\C#\230405\App\01_operator\obj\Debug\01_operator.pdb
