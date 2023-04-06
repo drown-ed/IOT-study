@@ -1,0 +1,8 @@
+C:\Source\IOT-study\C#\230406\consoleapp\03_accessmodifier\bin\Debug\03_accessmodifier.exe.config
+C:\Source\IOT-study\C#\230406\consoleapp\03_accessmodifier\bin\Debug\03_accessmodifier.exe
+C:\Source\IOT-study\C#\230406\consoleapp\03_accessmodifier\bin\Debug\03_accessmodifier.pdb
+C:\Source\IOT-study\C#\230406\consoleapp\03_accessmodifier\obj\Debug\03_accessmodifier.csproj.AssemblyReference.cache
+C:\Source\IOT-study\C#\230406\consoleapp\03_accessmodifier\obj\Debug\03_accessmodifier.csproj.SuggestedBindingRedirects.cache
+C:\Source\IOT-study\C#\230406\consoleapp\03_accessmodifier\obj\Debug\03_accessmodifier.csproj.CoreCompileInputs.cache
+C:\Source\IOT-study\C#\230406\consoleapp\03_accessmodifier\obj\Debug\03_accessmodifier.exe
+C:\Source\IOT-study\C#\230406\consoleapp\03_accessmodifier\obj\Debug\03_accessmodifier.pdb

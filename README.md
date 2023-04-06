@@ -128,8 +128,15 @@
 
 ### Day 47 (23.04.05)
 1. C# 기본
-    - 기본 문법
+    - 기본 문법 (변수, 메서드, 연산자, 제어)
 
 2. Win App
     - Winforms vs WPF 개요
     - Winforms 기초
+
+### Day 48 (23.04.06)
+1. C# 기본
+    - 클래스
+
+2. Win App
+    - WinForms 컨트롤
