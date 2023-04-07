@@ -1,0 +1,8 @@
+C:\Source\IOT-study\C#\230407\ConsoleApp\02_override\bin\Debug\02_override.exe.config
+C:\Source\IOT-study\C#\230407\ConsoleApp\02_override\bin\Debug\02_override.exe
+C:\Source\IOT-study\C#\230407\ConsoleApp\02_override\bin\Debug\02_override.pdb
+C:\Source\IOT-study\C#\230407\ConsoleApp\02_override\obj\Debug\02_override.csproj.AssemblyReference.cache
+C:\Source\IOT-study\C#\230407\ConsoleApp\02_override\obj\Debug\02_override.csproj.SuggestedBindingRedirects.cache
+C:\Source\IOT-study\C#\230407\ConsoleApp\02_override\obj\Debug\02_override.csproj.CoreCompileInputs.cache
+C:\Source\IOT-study\C#\230407\ConsoleApp\02_override\obj\Debug\02_override.exe
+C:\Source\IOT-study\C#\230407\ConsoleApp\02_override\obj\Debug\02_override.pdb

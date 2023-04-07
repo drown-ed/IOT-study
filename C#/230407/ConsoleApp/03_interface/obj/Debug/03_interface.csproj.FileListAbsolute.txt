@@ -1,0 +1,8 @@
+C:\Source\IOT-study\C#\230407\ConsoleApp\03_interface\bin\Debug\03_interface.exe.config
+C:\Source\IOT-study\C#\230407\ConsoleApp\03_interface\bin\Debug\03_interface.exe
+C:\Source\IOT-study\C#\230407\ConsoleApp\03_interface\bin\Debug\03_interface.pdb
+C:\Source\IOT-study\C#\230407\ConsoleApp\03_interface\obj\Debug\03_interface.csproj.AssemblyReference.cache
+C:\Source\IOT-study\C#\230407\ConsoleApp\03_interface\obj\Debug\03_interface.csproj.SuggestedBindingRedirects.cache
+C:\Source\IOT-study\C#\230407\ConsoleApp\03_interface\obj\Debug\03_interface.csproj.CoreCompileInputs.cache
+C:\Source\IOT-study\C#\230407\ConsoleApp\03_interface\obj\Debug\03_interface.exe
+C:\Source\IOT-study\C#\230407\ConsoleApp\03_interface\obj\Debug\03_interface.pdb

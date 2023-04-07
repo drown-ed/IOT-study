@@ -140,3 +140,11 @@
 
 2. Win App
     - WinForms 컨트롤
+
+### Day 49 (23.04.07)
+1. C# 기본
+    - 클래스 상속 계속
+
+2. Win App
+    - WinForms 컨트롤 마무리
+    - WinForms 예제 실습

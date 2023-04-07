@@ -1,0 +1,8 @@
+C:\Source\IOT-study\C#\230407\ConsoleApp\01_inheritance\bin\Debug\01_inheritance.exe.config
+C:\Source\IOT-study\C#\230407\ConsoleApp\01_inheritance\bin\Debug\01_inheritance.exe
+C:\Source\IOT-study\C#\230407\ConsoleApp\01_inheritance\bin\Debug\01_inheritance.pdb
+C:\Source\IOT-study\C#\230407\ConsoleApp\01_inheritance\obj\Debug\01_inheritance.csproj.AssemblyReference.cache
+C:\Source\IOT-study\C#\230407\ConsoleApp\01_inheritance\obj\Debug\01_inheritance.csproj.SuggestedBindingRedirects.cache
+C:\Source\IOT-study\C#\230407\ConsoleApp\01_inheritance\obj\Debug\01_inheritance.csproj.CoreCompileInputs.cache
+C:\Source\IOT-study\C#\230407\ConsoleApp\01_inheritance\obj\Debug\01_inheritance.exe
+C:\Source\IOT-study\C#\230407\ConsoleApp\01_inheritance\obj\Debug\01_inheritance.pdb
