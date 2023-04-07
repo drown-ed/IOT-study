@@ -1,0 +1,11 @@
+C:\Source\IOT-study\C#\230407\WinApp\02_login\bin\Debug\02_login.exe.config
+C:\Source\IOT-study\C#\230407\WinApp\02_login\bin\Debug\02_login.exe
+C:\Source\IOT-study\C#\230407\WinApp\02_login\bin\Debug\02_login.pdb
+C:\Source\IOT-study\C#\230407\WinApp\02_login\obj\Debug\02_login.csproj.AssemblyReference.cache
+C:\Source\IOT-study\C#\230407\WinApp\02_login\obj\Debug\02_login.csproj.SuggestedBindingRedirects.cache
+C:\Source\IOT-study\C#\230407\WinApp\02_login\obj\Debug\_02_login.FrmMain.resources
+C:\Source\IOT-study\C#\230407\WinApp\02_login\obj\Debug\_02_login.Properties.Resources.resources
+C:\Source\IOT-study\C#\230407\WinApp\02_login\obj\Debug\02_login.csproj.GenerateResource.cache
+C:\Source\IOT-study\C#\230407\WinApp\02_login\obj\Debug\02_login.csproj.CoreCompileInputs.cache
+C:\Source\IOT-study\C#\230407\WinApp\02_login\obj\Debug\02_login.exe
+C:\Source\IOT-study\C#\230407\WinApp\02_login\obj\Debug\02_login.pdb
