@@ -1,0 +1,8 @@
+C:\Source\IOT-study\C#\230410\ConsoleApp\03_carproperty\bin\Debug\03_carproperty.exe.config
+C:\Source\IOT-study\C#\230410\ConsoleApp\03_carproperty\bin\Debug\03_carproperty.exe
+C:\Source\IOT-study\C#\230410\ConsoleApp\03_carproperty\bin\Debug\03_carproperty.pdb
+C:\Source\IOT-study\C#\230410\ConsoleApp\03_carproperty\obj\Debug\03_collection.csproj.AssemblyReference.cache
+C:\Source\IOT-study\C#\230410\ConsoleApp\03_carproperty\obj\Debug\03_collection.csproj.SuggestedBindingRedirects.cache
+C:\Source\IOT-study\C#\230410\ConsoleApp\03_carproperty\obj\Debug\03_collection.csproj.CoreCompileInputs.cache
+C:\Source\IOT-study\C#\230410\ConsoleApp\03_carproperty\obj\Debug\03_carproperty.exe
+C:\Source\IOT-study\C#\230410\ConsoleApp\03_carproperty\obj\Debug\03_carproperty.pdb

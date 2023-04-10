@@ -1,0 +1,8 @@
+C:\Source\IOT-study\C#\230410\ConsoleApp\02_property\bin\Debug\02_property.exe.config
+C:\Source\IOT-study\C#\230410\ConsoleApp\02_property\bin\Debug\02_property.exe
+C:\Source\IOT-study\C#\230410\ConsoleApp\02_property\bin\Debug\02_property.pdb
+C:\Source\IOT-study\C#\230410\ConsoleApp\02_property\obj\Debug\02_property.csproj.AssemblyReference.cache
+C:\Source\IOT-study\C#\230410\ConsoleApp\02_property\obj\Debug\02_property.csproj.SuggestedBindingRedirects.cache
+C:\Source\IOT-study\C#\230410\ConsoleApp\02_property\obj\Debug\02_property.csproj.CoreCompileInputs.cache
+C:\Source\IOT-study\C#\230410\ConsoleApp\02_property\obj\Debug\02_property.exe
+C:\Source\IOT-study\C#\230410\ConsoleApp\02_property\obj\Debug\02_property.pdb
