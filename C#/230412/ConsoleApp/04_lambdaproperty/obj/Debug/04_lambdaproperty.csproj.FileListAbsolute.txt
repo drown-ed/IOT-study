@@ -1,0 +1,8 @@
+C:\Source\IOT-study\C#\230412\ConsoleApp\04_lambdaproperty\bin\Debug\04_lambdaproperty.exe.config
+C:\Source\IOT-study\C#\230412\ConsoleApp\04_lambdaproperty\bin\Debug\04_lambdaproperty.exe
+C:\Source\IOT-study\C#\230412\ConsoleApp\04_lambdaproperty\bin\Debug\04_lambdaproperty.pdb
+C:\Source\IOT-study\C#\230412\ConsoleApp\04_lambdaproperty\obj\Debug\04_lambdaproperty.csproj.AssemblyReference.cache
+C:\Source\IOT-study\C#\230412\ConsoleApp\04_lambdaproperty\obj\Debug\04_lambdaproperty.csproj.SuggestedBindingRedirects.cache
+C:\Source\IOT-study\C#\230412\ConsoleApp\04_lambdaproperty\obj\Debug\04_lambdaproperty.csproj.CoreCompileInputs.cache
+C:\Source\IOT-study\C#\230412\ConsoleApp\04_lambdaproperty\obj\Debug\04_lambdaproperty.exe
+C:\Source\IOT-study\C#\230412\ConsoleApp\04_lambdaproperty\obj\Debug\04_lambdaproperty.pdb

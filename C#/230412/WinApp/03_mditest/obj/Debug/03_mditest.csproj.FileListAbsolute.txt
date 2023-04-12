@@ -1,0 +1,14 @@
+C:\Source\IOT-study\C#\230412\WinApp\03_mditest\bin\Debug\03_mditest.exe.config
+C:\Source\IOT-study\C#\230412\WinApp\03_mditest\bin\Debug\03_mditest.exe
+C:\Source\IOT-study\C#\230412\WinApp\03_mditest\bin\Debug\03_mditest.pdb
+C:\Source\IOT-study\C#\230412\WinApp\03_mditest\obj\Debug\03_mditest.csproj.AssemblyReference.cache
+C:\Source\IOT-study\C#\230412\WinApp\03_mditest\obj\Debug\03_mditest.csproj.SuggestedBindingRedirects.cache
+C:\Source\IOT-study\C#\230412\WinApp\03_mditest\obj\Debug\_03_mditest.Form1.resources
+C:\Source\IOT-study\C#\230412\WinApp\03_mditest\obj\Debug\_03_mditest.FrmAbout.resources
+C:\Source\IOT-study\C#\230412\WinApp\03_mditest\obj\Debug\_03_mditest.FrmChild1.resources
+C:\Source\IOT-study\C#\230412\WinApp\03_mditest\obj\Debug\_03_mditest.FrmChild2.resources
+C:\Source\IOT-study\C#\230412\WinApp\03_mditest\obj\Debug\_03_mditest.Properties.Resources.resources
+C:\Source\IOT-study\C#\230412\WinApp\03_mditest\obj\Debug\03_mditest.csproj.GenerateResource.cache
+C:\Source\IOT-study\C#\230412\WinApp\03_mditest\obj\Debug\03_mditest.csproj.CoreCompileInputs.cache
+C:\Source\IOT-study\C#\230412\WinApp\03_mditest\obj\Debug\03_mditest.exe
+C:\Source\IOT-study\C#\230412\WinApp\03_mditest\obj\Debug\03_mditest.pdb

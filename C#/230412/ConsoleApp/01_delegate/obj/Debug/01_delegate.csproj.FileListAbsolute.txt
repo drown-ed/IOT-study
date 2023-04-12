@@ -1,0 +1,8 @@
+C:\Source\IOT-study\C#\230412\ConsoleApp\01_delegate\bin\Debug\01_delegate.exe.config
+C:\Source\IOT-study\C#\230412\ConsoleApp\01_delegate\bin\Debug\01_delegate.exe
+C:\Source\IOT-study\C#\230412\ConsoleApp\01_delegate\bin\Debug\01_delegate.pdb
+C:\Source\IOT-study\C#\230412\ConsoleApp\01_delegate\obj\Debug\01_delegate.csproj.AssemblyReference.cache
+C:\Source\IOT-study\C#\230412\ConsoleApp\01_delegate\obj\Debug\01_delegate.csproj.SuggestedBindingRedirects.cache
+C:\Source\IOT-study\C#\230412\ConsoleApp\01_delegate\obj\Debug\01_delegate.csproj.CoreCompileInputs.cache
+C:\Source\IOT-study\C#\230412\ConsoleApp\01_delegate\obj\Debug\01_delegate.exe
+C:\Source\IOT-study\C#\230412\ConsoleApp\01_delegate\obj\Debug\01_delegate.pdb

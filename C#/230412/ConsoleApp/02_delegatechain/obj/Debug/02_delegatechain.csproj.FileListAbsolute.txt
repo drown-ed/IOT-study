@@ -1,0 +1,8 @@
+C:\Source\IOT-study\C#\230412\ConsoleApp\02_delegatechain\bin\Debug\02_delegatechain.exe.config
+C:\Source\IOT-study\C#\230412\ConsoleApp\02_delegatechain\bin\Debug\02_delegatechain.exe
+C:\Source\IOT-study\C#\230412\ConsoleApp\02_delegatechain\bin\Debug\02_delegatechain.pdb
+C:\Source\IOT-study\C#\230412\ConsoleApp\02_delegatechain\obj\Debug\02_delegatechain.csproj.AssemblyReference.cache
+C:\Source\IOT-study\C#\230412\ConsoleApp\02_delegatechain\obj\Debug\02_delegatechain.csproj.SuggestedBindingRedirects.cache
+C:\Source\IOT-study\C#\230412\ConsoleApp\02_delegatechain\obj\Debug\02_delegatechain.csproj.CoreCompileInputs.cache
+C:\Source\IOT-study\C#\230412\ConsoleApp\02_delegatechain\obj\Debug\02_delegatechain.exe
+C:\Source\IOT-study\C#\230412\ConsoleApp\02_delegatechain\obj\Debug\02_delegatechain.pdb

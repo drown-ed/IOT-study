@@ -1,0 +1,11 @@
+C:\Source\IOT-study\C#\230412\WinApp\dbhandling\bin\Debug\dbhandling.exe.config
+C:\Source\IOT-study\C#\230412\WinApp\dbhandling\bin\Debug\dbhandling.exe
+C:\Source\IOT-study\C#\230412\WinApp\dbhandling\bin\Debug\dbhandling.pdb
+C:\Source\IOT-study\C#\230412\WinApp\dbhandling\obj\Debug\dbhandling.csproj.AssemblyReference.cache
+C:\Source\IOT-study\C#\230412\WinApp\dbhandling\obj\Debug\dbhandling.csproj.SuggestedBindingRedirects.cache
+C:\Source\IOT-study\C#\230412\WinApp\dbhandling\obj\Debug\dbhandling.FrmMain.resources
+C:\Source\IOT-study\C#\230412\WinApp\dbhandling\obj\Debug\dbhandling.Properties.Resources.resources
+C:\Source\IOT-study\C#\230412\WinApp\dbhandling\obj\Debug\dbhandling.csproj.GenerateResource.cache
+C:\Source\IOT-study\C#\230412\WinApp\dbhandling\obj\Debug\dbhandling.csproj.CoreCompileInputs.cache
+C:\Source\IOT-study\C#\230412\WinApp\dbhandling\obj\Debug\dbhandling.exe
+C:\Source\IOT-study\C#\230412\WinApp\dbhandling\obj\Debug\dbhandling.pdb
