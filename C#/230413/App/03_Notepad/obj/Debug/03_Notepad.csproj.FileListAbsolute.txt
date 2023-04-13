@@ -1,0 +1,11 @@
+C:\Source\IOT-study\C#\230413\App\03_Notepad\bin\Debug\03_Notepad.exe.config
+C:\Source\IOT-study\C#\230413\App\03_Notepad\bin\Debug\03_Notepad.exe
+C:\Source\IOT-study\C#\230413\App\03_Notepad\bin\Debug\03_Notepad.pdb
+C:\Source\IOT-study\C#\230413\App\03_Notepad\obj\Debug\03_Notepad.csproj.AssemblyReference.cache
+C:\Source\IOT-study\C#\230413\App\03_Notepad\obj\Debug\03_Notepad.csproj.SuggestedBindingRedirects.cache
+C:\Source\IOT-study\C#\230413\App\03_Notepad\obj\Debug\_03_Notepad.FrmMain.resources
+C:\Source\IOT-study\C#\230413\App\03_Notepad\obj\Debug\_03_Notepad.Properties.Resources.resources
+C:\Source\IOT-study\C#\230413\App\03_Notepad\obj\Debug\03_Notepad.csproj.GenerateResource.cache
+C:\Source\IOT-study\C#\230413\App\03_Notepad\obj\Debug\03_Notepad.csproj.CoreCompileInputs.cache
+C:\Source\IOT-study\C#\230413\App\03_Notepad\obj\Debug\03_Notepad.exe
+C:\Source\IOT-study\C#\230413\App\03_Notepad\obj\Debug\03_Notepad.pdb

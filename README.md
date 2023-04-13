@@ -180,10 +180,17 @@
     - 대리자, 이벤트
     - 람다식
     - 애트리뷰트
-    - 파일 핸들링
     - 더 공부해야 할 부분 (LINQ, 리플랙션, dynamic)
 
 2. Win App
     - DB 핸들링
-    - BookRentalShop DB 사용 WinForms 앱 개발
-    - 실습 예제
+    - SDI vs MDI
+
+### Day 53 (23.04.13)
+1. C# 기본
+    - 파일핸들링
+    - 스래드 / 테스크
+    - 가비지 컬렉션
+
+2. Win App
+
