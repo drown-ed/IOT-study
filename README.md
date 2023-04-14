@@ -193,4 +193,16 @@
     - 가비지 컬렉션
 
 2. Win App
+    - 메모장 만들기
+    - BookRentalShop DB 사용 WinForms 앱 개발
+        - WinForms MDI
+        - MySQL 연동
 
+
+### Day 54 (23.04.14)
+1. C# 기본
+    - 스레드 / 태스크
+    - 가비지 컬렉션
+
+2. Win App
+    - BookRentalShop 만들기

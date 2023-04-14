@@ -1,0 +1,11 @@
+C:\Source\IOT-study\C#\230414\App\01_winforms_thread\bin\Debug\01_winforms_thread.exe.config
+C:\Source\IOT-study\C#\230414\App\01_winforms_thread\bin\Debug\01_winforms_thread.exe
+C:\Source\IOT-study\C#\230414\App\01_winforms_thread\bin\Debug\01_winforms_thread.pdb
+C:\Source\IOT-study\C#\230414\App\01_winforms_thread\obj\Debug\01_winforms_thread.csproj.AssemblyReference.cache
+C:\Source\IOT-study\C#\230414\App\01_winforms_thread\obj\Debug\01_winforms_thread.csproj.SuggestedBindingRedirects.cache
+C:\Source\IOT-study\C#\230414\App\01_winforms_thread\obj\Debug\_01_winforms_thread.FrmMain.resources
+C:\Source\IOT-study\C#\230414\App\01_winforms_thread\obj\Debug\_01_winforms_thread.Properties.Resources.resources
+C:\Source\IOT-study\C#\230414\App\01_winforms_thread\obj\Debug\01_winforms_thread.csproj.GenerateResource.cache
+C:\Source\IOT-study\C#\230414\App\01_winforms_thread\obj\Debug\01_winforms_thread.csproj.CoreCompileInputs.cache
+C:\Source\IOT-study\C#\230414\App\01_winforms_thread\obj\Debug\01_winforms_thread.exe
+C:\Source\IOT-study\C#\230414\App\01_winforms_thread\obj\Debug\01_winforms_thread.pdb
