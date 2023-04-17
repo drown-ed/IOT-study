@@ -1,0 +1,8 @@
+C:\Source\IOT-study\C#\230417\CodingTest\04_app\bin\Debug\04_app.exe.config
+C:\Source\IOT-study\C#\230417\CodingTest\04_app\bin\Debug\04_app.exe
+C:\Source\IOT-study\C#\230417\CodingTest\04_app\bin\Debug\04_app.pdb
+C:\Source\IOT-study\C#\230417\CodingTest\04_app\obj\Debug\04_app.csproj.AssemblyReference.cache
+C:\Source\IOT-study\C#\230417\CodingTest\04_app\obj\Debug\04_app.csproj.SuggestedBindingRedirects.cache
+C:\Source\IOT-study\C#\230417\CodingTest\04_app\obj\Debug\04_app.csproj.CoreCompileInputs.cache
+C:\Source\IOT-study\C#\230417\CodingTest\04_app\obj\Debug\04_app.exe
+C:\Source\IOT-study\C#\230417\CodingTest\04_app\obj\Debug\04_app.pdb
