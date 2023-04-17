@@ -1,4 +1,4 @@
-﻿namespace _01_winforms_thread
+﻿namespace wf14_winforms_thread
 {
     partial class FrmMain
     {
@@ -32,8 +32,8 @@
             this.TxtNumber = new System.Windows.Forms.TextBox();
             this.BtnStart = new System.Windows.Forms.Button();
             this.BtnCancel = new System.Windows.Forms.Button();
-            this.PgbCalculator = new System.Windows.Forms.ProgressBar();
-            this.TxtResult = new System.Windows.Forms.Label();
+            this.PgbCalculate = new System.Windows.Forms.ProgressBar();
+            this.label2 = new System.Windows.Forms.Label();
             this.LblResult = new System.Windows.Forms.Label();
             this.Worker = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
@@ -49,7 +49,7 @@
             // 
             // TxtNumber
             // 
-            this.TxtNumber.Location = new System.Drawing.Point(59, 20);
+            this.TxtNumber.Location = new System.Drawing.Point(66, 20);
             this.TxtNumber.Name = "TxtNumber";
             this.TxtNumber.Size = new System.Drawing.Size(100, 21);
             this.TxtNumber.TabIndex = 1;
@@ -57,7 +57,7 @@
             // 
             // BtnStart
             // 
-            this.BtnStart.Location = new System.Drawing.Point(165, 19);
+            this.BtnStart.Location = new System.Drawing.Point(237, 18);
             this.BtnStart.Name = "BtnStart";
             this.BtnStart.Size = new System.Drawing.Size(75, 23);
             this.BtnStart.TabIndex = 2;
@@ -67,7 +67,7 @@
             // 
             // BtnCancel
             // 
-            this.BtnCancel.Location = new System.Drawing.Point(246, 20);
+            this.BtnCancel.Location = new System.Drawing.Point(318, 18);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(75, 23);
             this.BtnCancel.TabIndex = 3;
@@ -75,26 +75,26 @@
             this.BtnCancel.UseVisualStyleBackColor = true;
             this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
-            // PgbCalculator
+            // PgbCalculate
             // 
-            this.PgbCalculator.Location = new System.Drawing.Point(12, 49);
-            this.PgbCalculator.Name = "PgbCalculator";
-            this.PgbCalculator.Size = new System.Drawing.Size(309, 23);
-            this.PgbCalculator.TabIndex = 4;
+            this.PgbCalculate.Location = new System.Drawing.Point(15, 58);
+            this.PgbCalculate.Name = "PgbCalculate";
+            this.PgbCalculate.Size = new System.Drawing.Size(378, 23);
+            this.PgbCalculate.TabIndex = 4;
             // 
-            // TxtResult
+            // label2
             // 
-            this.TxtResult.AutoSize = true;
-            this.TxtResult.Location = new System.Drawing.Point(12, 88);
-            this.TxtResult.Name = "TxtResult";
-            this.TxtResult.Size = new System.Drawing.Size(39, 14);
-            this.TxtResult.TabIndex = 5;
-            this.TxtResult.Text = "결과 : ";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(31, 95);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 14);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "결과";
             // 
             // LblResult
             // 
             this.LblResult.AutoSize = true;
-            this.LblResult.Location = new System.Drawing.Point(69, 88);
+            this.LblResult.Location = new System.Drawing.Point(66, 95);
             this.LblResult.Name = "LblResult";
             this.LblResult.Size = new System.Drawing.Size(14, 14);
             this.LblResult.TabIndex = 6;
@@ -110,17 +110,21 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(335, 116);
+            this.ClientSize = new System.Drawing.Size(405, 128);
             this.Controls.Add(this.LblResult);
-            this.Controls.Add(this.TxtResult);
-            this.Controls.Add(this.PgbCalculator);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.PgbCalculate);
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.BtnStart);
             this.Controls.Add(this.TxtNumber);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BackgroundWorker 테스트";
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.ResumeLayout(false);
@@ -134,8 +138,8 @@
         private System.Windows.Forms.TextBox TxtNumber;
         private System.Windows.Forms.Button BtnStart;
         private System.Windows.Forms.Button BtnCancel;
-        private System.Windows.Forms.ProgressBar PgbCalculator;
-        private System.Windows.Forms.Label TxtResult;
+        private System.Windows.Forms.ProgressBar PgbCalculate;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label LblResult;
         private System.ComponentModel.BackgroundWorker Worker;
     }

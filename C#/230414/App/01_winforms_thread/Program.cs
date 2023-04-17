@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace _01_winforms_thread
+namespace wf14_winforms_thread
 {
     internal static class Program
     {

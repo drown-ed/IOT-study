@@ -64,7 +64,7 @@ namespace wf13_bookrentalshop
             try
             {
                 // DB처리
-                using (MySqlConnection conn = new MySqlConnection(Commons.ConnString))
+                using (MySqlConnection conn = new MySqlConnection(Helpers.Commons.ConnString))
                 {
                     conn.Open();
 
