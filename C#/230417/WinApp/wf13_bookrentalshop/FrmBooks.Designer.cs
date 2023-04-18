@@ -35,17 +35,17 @@
             this.BtnDel = new System.Windows.Forms.Button();
             this.BtnSave = new System.Windows.Forms.Button();
             this.BtnNew = new System.Windows.Forms.Button();
+            this.TxtNames = new System.Windows.Forms.TextBox();
+            this.TxtISBN = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.TxtAuthor = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.TxtBookIdx = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.TxtNames = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.TxtISBN = new System.Windows.Forms.TextBox();
             this.CboDivision = new System.Windows.Forms.ComboBox();
             this.DtpReleaseDate = new System.Windows.Forms.DateTimePicker();
             this.NudPrice = new System.Windows.Forms.NumericUpDown();
@@ -154,6 +154,33 @@
             this.BtnNew.UseVisualStyleBackColor = true;
             this.BtnNew.Click += new System.EventHandler(this.BtnNew_Click);
             // 
+            // TxtNames
+            // 
+            this.TxtNames.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtNames.Location = new System.Drawing.Point(72, 123);
+            this.TxtNames.Name = "TxtNames";
+            this.TxtNames.Size = new System.Drawing.Size(165, 21);
+            this.TxtNames.TabIndex = 4;
+            // 
+            // TxtISBN
+            // 
+            this.TxtISBN.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtISBN.Location = new System.Drawing.Point(72, 181);
+            this.TxtISBN.Name = "TxtISBN";
+            this.TxtISBN.Size = new System.Drawing.Size(165, 21);
+            this.TxtISBN.TabIndex = 6;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(34, 126);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(29, 14);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "서명";
+            // 
             // TxtAuthor
             // 
             this.TxtAuthor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -162,6 +189,24 @@
             this.TxtAuthor.Name = "TxtAuthor";
             this.TxtAuthor.Size = new System.Drawing.Size(165, 21);
             this.TxtAuthor.TabIndex = 2;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(30, 184);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(33, 14);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "ISBN";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(34, 213);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(29, 14);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "가격";
             // 
             // label2
             // 
@@ -172,12 +217,31 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "저자명";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(20, 97);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(43, 14);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "책 장르";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(23, 155);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(40, 14);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "출판일";
+            // 
             // TxtBookIdx
             // 
             this.TxtBookIdx.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtBookIdx.Location = new System.Drawing.Point(72, 36);
             this.TxtBookIdx.Name = "TxtBookIdx";
+            this.TxtBookIdx.ReadOnly = true;
             this.TxtBookIdx.Size = new System.Drawing.Size(165, 21);
             this.TxtBookIdx.TabIndex = 1;
             // 
@@ -189,69 +253,6 @@
             this.label1.Size = new System.Drawing.Size(43, 14);
             this.label1.TabIndex = 0;
             this.label1.Text = "책 번호";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 97);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 14);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "책 장르";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(34, 126);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 14);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "서명";
-            // 
-            // TxtNames
-            // 
-            this.TxtNames.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtNames.Location = new System.Drawing.Point(72, 123);
-            this.TxtNames.Name = "TxtNames";
-            this.TxtNames.Size = new System.Drawing.Size(165, 21);
-            this.TxtNames.TabIndex = 4;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(23, 155);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 14);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "출판일";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(34, 213);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(29, 14);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "가격";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(30, 184);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(33, 14);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "ISBN";
-            // 
-            // TxtISBN
-            // 
-            this.TxtISBN.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtISBN.Location = new System.Drawing.Point(72, 181);
-            this.TxtISBN.Name = "TxtISBN";
-            this.TxtISBN.Size = new System.Drawing.Size(165, 21);
-            this.TxtISBN.TabIndex = 6;
             // 
             // CboDivision
             // 
