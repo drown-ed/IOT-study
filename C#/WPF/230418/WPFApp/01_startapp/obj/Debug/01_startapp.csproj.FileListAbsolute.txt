@@ -1,0 +1,16 @@
+C:\Source\IOT-study\C#\WPF\230418\WPFApp\01_startapp\bin\Debug\01_startapp.exe.config
+C:\Source\IOT-study\C#\WPF\230418\WPFApp\01_startapp\bin\Debug\01_startapp.exe
+C:\Source\IOT-study\C#\WPF\230418\WPFApp\01_startapp\bin\Debug\01_startapp.pdb
+C:\Source\IOT-study\C#\WPF\230418\WPFApp\01_startapp\obj\Debug\01_startapp.csproj.AssemblyReference.cache
+C:\Source\IOT-study\C#\WPF\230418\WPFApp\01_startapp\obj\Debug\01_startapp.csproj.SuggestedBindingRedirects.cache
+C:\Source\IOT-study\C#\WPF\230418\WPFApp\01_startapp\obj\Debug\MainWindow.g.cs
+C:\Source\IOT-study\C#\WPF\230418\WPFApp\01_startapp\obj\Debug\App.g.cs
+C:\Source\IOT-study\C#\WPF\230418\WPFApp\01_startapp\obj\Debug\01_startapp_MarkupCompile.cache
+C:\Source\IOT-study\C#\WPF\230418\WPFApp\01_startapp\obj\Debug\01_startapp_MarkupCompile.lref
+C:\Source\IOT-study\C#\WPF\230418\WPFApp\01_startapp\obj\Debug\MainWindow.baml
+C:\Source\IOT-study\C#\WPF\230418\WPFApp\01_startapp\obj\Debug\01_startapp.g.resources
+C:\Source\IOT-study\C#\WPF\230418\WPFApp\01_startapp\obj\Debug\_01_startapp.Properties.Resources.resources
+C:\Source\IOT-study\C#\WPF\230418\WPFApp\01_startapp\obj\Debug\01_startapp.csproj.GenerateResource.cache
+C:\Source\IOT-study\C#\WPF\230418\WPFApp\01_startapp\obj\Debug\01_startapp.csproj.CoreCompileInputs.cache
+C:\Source\IOT-study\C#\WPF\230418\WPFApp\01_startapp\obj\Debug\01_startapp.exe
+C:\Source\IOT-study\C#\WPF\230418\WPFApp\01_startapp\obj\Debug\01_startapp.pdb
