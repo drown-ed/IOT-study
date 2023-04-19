@@ -14,7 +14,7 @@
         <Slider x:Name="SldStep" Value="0" Width="100" ValueChanged="SldStep_ValueChanged" />
         <ProgressBar x:Name="PgbStep" Value="0" Width="100" Height="15" Maximum="10" />
 
-        <MediaElement Source="video.mp4" Width="200" Height="100"/>
+        <MediaElement x:Name="MediaPlayer" Source="" Width="200" Height="100" LoadedBehavior="Manual"/>
         <Image Source="xaml.png" Height="32" />
     </StackPanel>
 </Window>
